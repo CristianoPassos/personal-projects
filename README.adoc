@@ -1,0 +1,40 @@
+# Personal Projects
+
+I am a Developer with strong background in Java development (5+ years) and Agile Methodologies (3+ years)
+
+I also have worked as Scrum Master and have many `Certifications` in both Java and Agile.
+
+Please take a look at my http://bit.ly/cvcp6[Curriculum Vitae] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn] to see my full experience.
+
+#### My main areas of interest are:
+- Microservices with Spring and Java EE
+- Frontend frameworks (Angular, React)
+- DevOps (Jenkins, Docker)
+- Mobile (Ionic)
+
+I use this repository to try out new technologies and to develop my coding skills, bellow is a brief description of the projects you are going to find here.
+
+|===
+| Project | Description | Technology
+
+| link:my-menu[My Menu]
+| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project. 
+| Java, Angular and Ionic
+
+| link:wakanda[Wakanda]
+| Command line based role playing game
+| Java 8
+
+| link:hacker-rank[Hacker Rank]
+| https://www.hackerrank.com[Hacker Rank] challenge solutions.
+| Java
+
+| link:eso-wallpapers[ESO Wallpapers]
+| Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
+| Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
+
+| link:oauth-service[OAuth2 Service]
+| OAuth2 Authorization Server with embedded Redis and Data Base.
+| Redis, Spring Security, Spring Boot, OAuth2, H2, Flyway, Bcrypt
+
+|===

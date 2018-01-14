@@ -1,0 +1,19 @@
+# My Menu
+
+It's an Order Management System for restaurants, composed of three parts integrated.
+
+- link:backend[Backend (Java)]
+- link:web[Website (Angular)]
+- link:mobile[Mobile App (Ionic)]
+
+Each part has its own specific purpose. 
+
+The Website was responsible for the Restaurant's administrative view allowing the owner to visualize and manage incoming orders as well the management of the Restaurant's Menu.
+
+The Mobile App allowed the Customer to check Restaurant's Menu and make orders
+
+And the backend integrated everything through REST services. 
+
+This project is incomplete and not currently in development.
+It was an entrepreneurial endeavor that I have taken with a Friend that we have decided to not focus more.
+It was a great experience anyway =].

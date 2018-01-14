@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="app.cristiano.work" version="0.0.2" xmlns="http://www.w3.org/ns/widgets">
+  <name>Meu Almoço</name>
+
+  <description>
+    App para realização de pedidos
+  </description>
+
+  <author email="mail@cristiano.work" href="http://cristiano.work/">
+    Cristiano de Oliveira Passos
+  </author>
+
+  <content src="index.html"/>
+  <access origin="*"/>
+
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+
+  <platform name="android">
+    <icon src="icons/android/icon-64.png" width="64" height="64"/>
+    <icon src="icons/android/icon-64@2x.png" width="128" height="128"/>
+  </platform>
+
+  <platform name="ios">
+    <icon src="icons/ios/icon-64.png" width="64" height="64"/>
+    <icon src="icons/ios/icon-64@2x.png" width="128" height="128"/>
+  </platform>
+</widget>
