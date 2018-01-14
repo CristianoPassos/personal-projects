@@ -1,0 +1,79 @@
+<div class="container">
+
+  <div class="page-header text-center">
+    <h1>Inclus&atilde;o de Refei&ccedil;&atilde;o</h1>
+  </div>
+
+  <form name="refeicaoForm" class="form">
+    <div class="form-group">
+      <input class="form-control" type="text" ng-model="ctrl.refeicao.titulo" placeholder="Nome" required>
+    </div>
+
+    <div class="form-group">
+        <textarea class="form-control" ng-model="ctrl.refeicao.descricao" placeholder="Descri&ccedil;&atilde;o" rows="5"
+                  required></textarea>
+    </div>
+  </form>
+
+  <form name="variacaoForm" ng-submit="ctrl.salvarNovaVariacao()">
+    <div class="row">
+      <div class="col-xs-1">
+        <input class="form-control" ng-model="ctrl.novaVariacao.peso"
+               placeholder="Peso" required name="peso">
+      </div>
+      <div class="col-xs-1">
+        <input class="form-control" ng-model="ctrl.novaVariacao.preco"
+               placeholder="Pre&ccedil;o" required name="preco">
+      </div>
+      <div class="col-xs-8">
+        <input class="form-control" ng-model="ctrl.novaVariacao.observacao"
+               placeholder="Observa&ccedil;&atilde;o" name="observacao">
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-success" type="submit" title="Salvar"><i class="glyphicon glyphicon-ok"></i></button>
+
+        <button class="btn btn-warning" type="button" ng-click="ctrl.iniciarNovaVariacao()" title="Limpar"><i
+          class="glyphicon glyphicon-remove"></i></button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="text-center">Peso</th>
+      <th class="text-center">Pre&ccedil;o</th>
+      <th class="text-center">Observa&ccedil;&atilde;o</th>
+      <th class="text-center">A&ccedil;&otilde;es</th>
+    </tr>
+    </thead>
+
+    <tbody ng-repeat="variacao in ctrl.refeicao.variacoes" ng-show="ctrl.refeicao.variacoes">
+    <tr>
+      <td>{{variacao.peso}}</td>
+      <td>{{variacao.preco | currency }}</td>
+      <td>{{variacao.observacao}}</td>
+      <td class="text-center">
+        <button class="btn btn-xs btn-warning" title="Remover"
+                ng-click="ctrl.removerVariacao($index)"><i class="glyphicon  glyphicon-remove"></i></button>
+      </td>
+    </tr>
+    </tbody>
+
+    <tr class="warning">
+      <td colspan="4" ng-hide="ctrl.refeicao.variacoes.length" class="text-center">Nenhuma variação registrada</td>
+    </tr>
+  </table>
+
+
+  <div class="col-md-12 text-center">
+    <a class="btn btn-info" href="#/cardapio/atual" title="Voltar"><i class="glyphicon glyphicon-menu-left"></i></a>
+    </button>
+    <button class="btn btn-success" ng-click="ctrl.postRefeicao()" title="Salvar"><i class="glyphicon glyphicon-ok"></i>
+    </button>
+    <button class="btn btn-warning" ng-click="ctrl.iniciarNovaRefeicao()" title="Limpar"><i
+      class="glyphicon glyphicon-trash"></i>
+    </button>
+  </div>
+
+</div>

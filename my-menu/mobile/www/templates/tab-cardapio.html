@@ -1,0 +1,15 @@
+<ion-view view-title="Card&aacute;pio">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="refeicao in cardapio"
+                type="item-text-wrap" href="#/tab/cardapio/{{refeicao.id}}">
+        <img ng-src="{{refeicao.img}}">
+
+        <h2>{{refeicao.titulo}}</h2>
+        <p>{{refeicao.descricao}}</p>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
