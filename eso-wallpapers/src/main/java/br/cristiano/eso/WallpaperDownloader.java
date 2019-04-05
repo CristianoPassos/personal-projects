@@ -1,12 +1,13 @@
 package br.cristiano.eso;
 
+import br.cristiano.eso.util.DownloaderURL;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.FilenameUtils;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.CopyOption;
+import java.net.MalformedURLException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,20 +19,28 @@ public class WallpaperDownloader {
 
     private final String outputDir;
 
-    public WallpaperDownloader(String outputDir) {
+    public WallpaperDownloader(@Nonnull final String outputDir) {
         this.outputDir = outputDir;
     }
 
-    public void download(String imageUrl) {
+    public void download(@Nonnull final String imageUrl) {
         try {
-            URL url = new URL(imageUrl);
-            String file = outputDir + FilenameUtils.getName(url.getPath());
-            log.info("Downloading: {}", url.getPath());
-            log.info("Saving to: {} ", file);
+            DownloaderURL url = new DownloaderURL(imageUrl);
+            download(url);
+        } catch (MalformedURLException ex) {
+            log.error("Invalid URL " + imageUrl, ex);
+        }
+    }
 
-            try (InputStream in = url.openStream()) {
-                Files.copy(in, Paths.get(file), REPLACE_EXISTING);
-            }
+    public void download(@Nonnull final DownloaderURL imageUrl) {
+
+        final String file = outputDir + FilenameUtils.getName(imageUrl.getPath());
+
+        log.info("Downloading: {}", imageUrl.getPath());
+        log.info("Saving to: {} ", file);
+
+        try (InputStream in = imageUrl.openStream()) {
+            Files.copy(in, Paths.get(file), REPLACE_EXISTING);
         } catch (FileAlreadyExistsException e) {
             log.warn(e.getLocalizedMessage());
         } catch (IOException e) {

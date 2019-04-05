@@ -20,56 +20,10 @@ import static java.util.stream.Collectors.toSet;
 @Log4j2
 public class ESO {
 
-    public static void main(String[] args) {
-        var nextPage = new WallpaperNextPageExtractor();
-        var idsExtractor = new WallpaperIdsExtractor();
-        var downloadLinkExtractor = new WallpaperDownloadLinkExtractor();
-        var downloader = new WallpaperDownloader(getStoragePath(args));
-        var firstPage = getOptionalFirstPage(args);
-
-        nextPage
-            .extractPages(firstPage)
-            .parallelStream()
-            .map(idsExtractor::extract)
-            .flatMap(Set::stream)
-            .collect(toSet())
-            .parallelStream()
-            .map(downloadLinkExtractor::extractWallpaperDownloadUrlById)
-            .collect(toSet())
-            .parallelStream()
-            .forEach(downloader::download);
-    }
-
-    private static String getStoragePath(final String[] args) {
-        try {
-            String storagePath = args[0];
-
-            checkParam(storagePath);
-
-            storagePath = buildStoragePath(storagePath);
-
-            createDirectory(storagePath);
-
-            log.info("Wallpapers will be stored at: {}", storagePath);
-
-            return storagePath;
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw new RequiredParamMissing("Output directory must be provided");
-        }
-    }
-
     private static String buildStoragePath(final String path) {
         String outputPath = path.endsWith(File.separator) ? path : path + File.separator;
         outputPath += DEFAULT_DIRECTORY + File.separator;
         return outputPath;
-    }
-
-    private static String getOptionalFirstPage(final String[] args) {
-        try {
-            return args[1];
-        } catch (ArrayIndexOutOfBoundsException e) {
-            return ESO_WALLPAPERS_PAGE;
-        }
     }
 
     private static void checkParam(final String param) {
@@ -92,6 +46,52 @@ public class ESO {
         if (!fileDir.mkdirs()) {
             throw new RequiredParamMissing(format("Not possible to create directory [%s]", outputPath));
         }
+    }
+
+    private static String getOptionalFirstPage(final String[] args) {
+        try {
+            return args[1];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return ESO_WALLPAPERS_PAGE;
+        }
+    }
+
+    private static String getStoragePath(final String[] args) {
+        try {
+            String storagePath = args[0];
+
+            checkParam(storagePath);
+
+            storagePath = buildStoragePath(storagePath);
+
+            createDirectory(storagePath);
+
+            log.info("Wallpapers will be stored at: {}", storagePath);
+
+            return storagePath;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RequiredParamMissing("Output directory must be provided");
+        }
+    }
+
+    public static void main(String[] args) {
+        var nextPage = new WallpaperNextPageExtractor();
+        var idsExtractor = new WallpaperIdsExtractor();
+        var downloadLinkExtractor = new WallpaperDownloadLinkExtractor();
+        var downloader = new WallpaperDownloader(getStoragePath(args));
+        var firstPage = getOptionalFirstPage(args);
+
+        nextPage
+                .extractPages(firstPage)
+                .parallelStream()
+                .map(idsExtractor::extract)
+                .flatMap(Set::stream)
+                .collect(toSet())
+                .parallelStream()
+                .map(downloadLinkExtractor::extractWallpaperDownloadUrlById)
+                .collect(toSet())
+                .parallelStream()
+                .forEach(downloader::download);
     }
 
 }
