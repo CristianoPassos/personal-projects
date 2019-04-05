@@ -1,4 +1,5 @@
 package br.cristiano.eso.main;
+
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,25 +14,25 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ESOIntegrationTest {
 
-    private static String[] args;
-    private static String tempDir;
+    private static String[] ARGS;
+
+    private static String TEMP_DIR;
 
     @BeforeAll
     public static void beforeAll() {
-        tempDir = System.getProperty("java.io.tmpdir") + UUID.randomUUID().toString() + File.separator;
-        args = new String[]{tempDir, "https://www.eso.org/public/unitedkingdom/images/archive/wallpapers/list/221/"};
+        TEMP_DIR = System.getProperty("java.io.tmpdir") + File.separator + UUID.randomUUID().toString() + File.separator;
+        ARGS = new String[]{TEMP_DIR, "https://www.eso.org/public/unitedkingdom/images/archive/wallpapers/list/230/"};
     }
 
     @Test
     public void testESO() {
-        ESO.main(args);
-        File wallpapers = new File(tempDir + DEFAULT_DIRECTORY + File.separator);
+        ESO.main(ARGS);
+        File wallpapers = new File(TEMP_DIR + DEFAULT_DIRECTORY + File.separator);
         assertTrue(wallpapers.listFiles().length > 1);
     }
 
     @AfterEach
     public void afterEach() throws IOException {
-        FileUtils.deleteDirectory(new File(tempDir));
+        FileUtils.deleteDirectory(new File(TEMP_DIR));
     }
-
 }

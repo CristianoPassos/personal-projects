@@ -6,9 +6,12 @@ import org.apache.commons.io.FilenameUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.CopyOption;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 @Log4j2
 public class WallpaperDownloader {
@@ -27,7 +30,7 @@ public class WallpaperDownloader {
             log.info("Saving to: {} ", file);
 
             try (InputStream in = url.openStream()) {
-                Files.copy(in, Paths.get(file));
+                Files.copy(in, Paths.get(file), REPLACE_EXISTING);
             }
         } catch (FileAlreadyExistsException e) {
             log.warn(e.getLocalizedMessage());
