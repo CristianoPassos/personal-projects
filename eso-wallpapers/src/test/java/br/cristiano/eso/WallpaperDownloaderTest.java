@@ -9,20 +9,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WallpaperDownloaderTest {
 
-    private static WallpaperDownloader downloader;
-    private static String tempDir;
+    private static WallpaperDownloader DOWNLOADER;
+
+    private static String TEMP_DIR;
 
     @BeforeAll
     public static void beforeAll() {
-        tempDir = System.getProperty("java.io.tmpdir") + "eso_download/";
-        downloader = new WallpaperDownloader(tempDir);
-
+        TEMP_DIR = System.getProperty("java.io.tmpdir") + File.separator;
+        DOWNLOADER = new WallpaperDownloader(TEMP_DIR);
     }
 
     @Test
     public void testDownload() {
-        downloader.download("https://cdn.eso.org/images/wallpaper5/ann13016a.jpg");
-        File image = new File(tempDir + "ann13016a.jpg");
+        DOWNLOADER.download("https://cdn.eso.org/images/wallpaper5/ann13016a.jpg");
+        File image = new File(TEMP_DIR + "ann13016a.jpg");
         assertTrue(image.exists());
         image.delete();
     }

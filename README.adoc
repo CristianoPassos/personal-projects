@@ -1,4 +1,4 @@
-# Personal Projects
+# Personal Projects - image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
 
 I am an experienced Software Developer (5 years) and Scrum Master (2 years), looking for an opportunity to work with Java and Spring with a Microservice architecture developing Cloud Native apps running on AWS. 
 
@@ -17,27 +17,27 @@ I use this repository to try out new technologies and to develop my coding skill
 |===
 | Project | Description | Technology
 
-| link:my-menu[My Menu]
-| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project. 
-| Java, Angular and Ionic
+| link:eso-wallpapers[ESO Wallpapers]
+| Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
+| Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
 
-| link:wakanda[Wakanda]
-| Command line based role playing game
-| Java 8
+| link:farm[Farm Service]
+| Fields management for farmers
+| Java 12, Swagger, Spring Boot, H2,
 
 | link:hacker-rank[Hacker Rank]
 | https://www.hackerrank.com[Hacker Rank] challenge solutions.
 | Java
 
-| link:eso-wallpapers[ESO Wallpapers]
-| Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
-| Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
+| link:my-menu[My Menu]
+| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project. 
+| Java, Angular and Ionic
 
 | link:oauth-service[OAuth2 Service]
 | OAuth2 Authorization Server with embedded Redis and Data Base.
 | Redis, Spring Security, Spring Boot, OAuth2, H2, Flyway, Bcrypt
 
-| link:farm[Farm Service]
-| Fields management for farmers
-| Java 12, Swagger, Spring Boot, H2,
+| link:wakanda[Wakanda]
+| Command line based role playing game
+| Java 8
 |===
