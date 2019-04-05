@@ -21,7 +21,7 @@ public class ESOIntegrationTest {
     @BeforeAll
     public static void beforeAll() {
         TEMP_DIR = System.getProperty("java.io.tmpdir") + File.separator + UUID.randomUUID().toString() + File.separator;
-        ARGS = new String[]{TEMP_DIR, "https://www.eso.org/public/unitedkingdom/images/archive/wallpapers/list/230/"};
+        ARGS = new String[]{TEMP_DIR, "https://www.eso.org/public/unitedkingdom/images/archive/wallpapers/list/237/"};
     }
 
     @Test
