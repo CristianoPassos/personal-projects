@@ -1,4 +1,4 @@
-# Personal Projects - image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
+# Personal Projects - Cristiano Passos image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
 
 I am an experienced Software Developer (5 years) and Scrum Master (2 years), looking for an opportunity to work with Java and Spring with a Microservice architecture developing Cloud Native apps running on AWS. 
 
