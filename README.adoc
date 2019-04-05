@@ -1,21 +1,17 @@
-# Personal Projects - image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
+# Personal Projects - Cristiano Passos image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
 
-I am an experienced Software Developer (5 years) and Scrum Master (2 years), looking for an opportunity to work with Java and Spring with a Microservice architecture developing Cloud Native apps running on AWS. 
+Experienced Software Developer (5 years) and Scrum Master (2 years), working with Java and Spring in a Microservice architecture developing Cloud Native apps running on AWS. 
 
-I also have worked as Scrum Master and have many `Certifications` in both Java and Agile.
-
-Please take a look at my http://bit.ly/cvcp6[Curriculum Vitae] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn] to see my full experience.
-
-## My main areas of interest are:
-- Microservices
-- Spring 
-- AWS
-- Cloud Native 
+My main areas of interest are: `Microservices`, `Spring`, `AWS` and `Cloud Native Apps`.
 
 I use this repository to try out new technologies and to develop my coding skills, bellow is a brief description of the projects you are going to find here.
 
 |===
 | Project | Description | Technology
+
+| link:core-spring-5-exam[Core Spring 5.0 Exam Notes]
+| Notes for Core Spring 5.0 Exam
+| Java 12 :coffee:, Spring
 
 | link:eso-wallpapers[ESO Wallpapers]
 | Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
@@ -41,3 +37,5 @@ I use this repository to try out new technologies and to develop my coding skill
 | Command line based role playing game
 | Java 8
 |===
+
+Please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn] to see my full experience.
