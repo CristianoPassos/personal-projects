@@ -1,10 +1,6 @@
 # Personal Projects - Cristiano Passos image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
 
-Experienced Software Developer (5 years) and Scrum Master (2 years), working with Java and Spring in a Microservice architecture developing Cloud Native apps running on AWS. 
-
-My main areas of interest are: `Microservices`, `Spring`, `AWS` and `Cloud Native Apps`.
-
-I use this repository to try out new technologies and to develop my coding skills, bellow is a brief description of the projects you are going to find here.
+Personal repo to try out new tech and to develop my coding skills, bellow is a brief description of what you can find here.
 
 |===
 | Project | Description | Technology
