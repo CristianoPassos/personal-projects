@@ -1,0 +1,1 @@
+{"query": "{ repository(owner: \"cristiano\", name: \"personal-projects\") { ref(qualifiedName: \"master\") { target { ... on Commit { history(first: 100) { edges { node { messageHeadline } } } } } } } }"}

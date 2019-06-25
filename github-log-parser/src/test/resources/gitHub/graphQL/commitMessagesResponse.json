@@ -1,0 +1,39 @@
+{
+  "data": {
+    "repository": {
+      "ref": {
+        "target": {
+          "history": {
+            "edges": [
+              {
+                "node": {
+                  "messageHeadline": "PUB-907 merge with master (#41)"
+                }
+              },
+              {
+                "node": {
+                  "messageHeadline": "[jenkins-release-pipeline] prepare for next development iteration"
+                }
+              },
+              {
+                "node": {
+                  "messageHeadline": "[jenkins-release-pipeline] prepare release dat-import-service-1.2.1"
+                }
+              },
+              {
+                "node": {
+                  "messageHeadline": "PUB-763: Applying PR suggestions."
+                }
+              },
+              {
+                "node": {
+                  "messageHeadline": "PUB-763: Apply new ecode condition to both parts of union query."
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

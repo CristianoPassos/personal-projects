@@ -1,0 +1,1 @@
+{"query": "{ repository(owner: \"${repo_owner}\", name: \"${repo_name}\") { ref(qualifiedName: \"master\") { target { ... on Commit { history(first: 100) { edges { node { messageHeadline } } } } } } } }"}

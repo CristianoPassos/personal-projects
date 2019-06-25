@@ -1,0 +1,21 @@
+# Descriptor: https://wkdauto.atlassian.net/wiki/spaces/DEV/pages/1278115841/Descriptor
+name: GitHub-log-parser
+journeys:
+  - Merchant
+  - Customer
+team: SRE
+jira: SRE
+type: Tool
+data_base: None
+slack:
+  channel: sre_channel
+  group: sre_group
+
+handbook: #Please fill
+runbook: #Please fill
+tags:
+  - #Please fill
+cluster_groups:
+  - #Please fill
+extra:
+  - #Please fill
