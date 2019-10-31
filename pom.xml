@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>marathon</module>
         <module>eso-wallpapers</module>
         <module>farm</module>
         <module>hacker-rank</module>
