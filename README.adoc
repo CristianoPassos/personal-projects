@@ -9,6 +9,10 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 | Notes for Core Spring 5.0 Exam
 | Java 12 :coffee:, Spring
 
+| link:marathon[Marathon]
+| As most as I can, I will solve and publish one challenge from https://www.dailycodingproblem.com[Daily Coding Problem]
+| Java 13
+
 | link:eso-wallpapers[ESO Wallpapers]
 | Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
 | Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
@@ -17,12 +21,8 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 | Fields management for farmers
 | Java 12, Swagger, Spring Boot, H2,
 
-| link:hacker-rank[Hacker Rank]
-| https://www.hackerrank.com[Hacker Rank] challenge solutions.
-| Java
-
 | link:my-menu[My Menu]
-| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project. 
+| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project
 | Java, Angular and Ionic
 
 | link:oauth-service[OAuth2 Service]
@@ -34,4 +34,4 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 | Java 8
 |===
 
-Please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn] to see my full experience.
+Please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn] to see my full experience

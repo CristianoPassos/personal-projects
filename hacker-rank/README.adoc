@@ -1,5 +1,0 @@
-# Hacker Rank
-
-For every solved puzzle, you should find a PDF close to it which states the problem.
-
-For more information, please go to the website: https://www.hackerrank.com and check https://www.hackerrank.com/cristiano_passos[my Hacker Rank Profile]
