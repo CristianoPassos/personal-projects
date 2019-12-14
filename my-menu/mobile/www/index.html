@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Meu Almo&#xE7;o</title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- ionic/angularjs app -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <script src="app/app.js"></script>
+
+  <script src="app/controllers.js"></script>
+  <script src="app/controllers/carrinho-ctrl.js"></script>
+  <script src="app/controllers/pedido-ctrl.js"></script>
+  <script src="app/controllers/cardapio/cardapio-ctrl.js"></script>
+  <script src="app/controllers/cardapio/refeicao-ctrl.js"></script>
+
+  <script src="app/services.js"></script>
+  <script src="app/services/carrinho-srv.js"></script>
+  <script src="app/services/cardapio-srv.js"></script>
+  <script src="app/services/pedido-srv.js"></script>
+</head>
+
+<body ng-app="meuMenu">
+
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<ion-view view-title="Pedidos">
+  <ion-content>
+
+    <div ng-repeat="pedido in pedidos">
+      <div class="card">
+        <div class="item item-text-wrap">
+          {{pedido.data}} - {{pedido.titulo}} - Quantidade: {{pedido.quantidade}}
+        </div>
+        <div class="item item-divider">
+          Valor Total: {{pedido.total | currency:'R$ '}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

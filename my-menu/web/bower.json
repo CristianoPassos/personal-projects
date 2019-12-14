@@ -1,0 +1,29 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "authors": [
+    "Cristiano Passos"
+  ],
+  "description": "SPA para acesso Web do MeuMenu",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.4",
+    "angular-bootstrap": "~0.13.4",
+    "angular-route": "1.4.4",
+    "angular-ui": "~0.4.0",
+    "bootstrap": "~3.3.5",
+    "file-saver.js": "~1.20150507.2",
+    "jquery-maskmoney": "~3.0.2",
+    "jquery.inputmask": "3.1.63",
+    "ng-file-upload": "4.1.4",
+    "ng-file-upload-shim": "4.1.4"
+  }
+}

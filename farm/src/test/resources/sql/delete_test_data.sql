@@ -1,0 +1,2 @@
+DElETE FROM fields;
+
