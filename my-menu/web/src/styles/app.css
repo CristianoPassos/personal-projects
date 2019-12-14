@@ -1,0 +1,187 @@
+/* app css stylesheet */
+
+.main-content {
+  padding-top: 70px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.respGrid {
+    width: 100%;
+}
+
+.draggable-margin {
+    margin: 3px;
+}
+
+.loader{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('/images/gears.gif') no-repeat center center;
+}
+
+div.sticky {
+  background-color: #f3f3f3;
+/*   background-color: #d9edf7; */
+  padding-bottom: 20px;
+  padding-top: 10px;
+  -webkit-transition: background .4s ease-in-out;
+       -o-transition: background .4s ease-in-out;
+          transition: background .4s ease-in-out;
+}
+
+div.sticky legend {
+  color: #339;
+  border-bottom: 1px solid #aaaaff;
+  -webkit-transition: color .4s ease-in-out;
+       -o-transition: color .4s ease-in-out;
+          transition: color .4s ease-in-out;
+}
+.hand-pointer {
+  cursor: pointer;
+}
+.ns-sort-ascent:after{
+  content: '\25B2';
+}
+
+.ns-sort-descent:after{
+  content: '\25BC';
+}
+
+.table-striped tbody tr.ns-row-selected td {
+    background-color: #9BC2C2;
+}
+
+.table-valign td,
+.table-valign th {
+  vertical-align: middle !important;
+}
+
+.slider {
+    width: 390px;
+    height: 390px;
+    overflow: hidden;
+    position: relative;
+    background: #e6e6e6;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 1002;
+    display: block;
+    top: 50%;
+    margin-top: -35px;
+    width: 36px;
+    height: 71px;
+    outline: none;
+    cursor: pointer;
+    background: url(/images/blank.gif) no-repeat;
+}
+
+.arrow.prev {
+    opacity: 0.2;
+    left: 20px;
+    background-image: url(/images/anterior_off.png);
+    transition: 0.2s linear all;
+}
+
+.arrow.next {
+    opacity: 0.2;
+    right: 20px;
+    background-image: url(/images/proximo_off.png);
+    transition: 0.2s linear all;
+}
+
+.arrow.prev:hover {
+    opacity: 1;
+    background-image: url(/images/anterior_on.png);
+}
+
+.arrow.next:hover {
+    opacity: 1;
+    background-image: url(/images/proximo_on.png);
+}
+
+.modal{
+    display: block !important;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 650px;
+    overflow-y: auto;
+}
+
+.row-col-centered{
+  float:none;
+}
+
+.row-padding {
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+
+.row-bottom {
+  margin-bottom: 5px!important;
+}
+
+.advanced-filter .form-control {
+  width:100%;
+}
+
+.advanced-filter-holder {
+  min-width:900px;
+  width:100%;
+}
+
+.locked {
+  background-color: #fff!important;
+}
+
+.clear-margin {
+  margin: 0px!important
+}
+
+.bold {
+    font-weight: bold;
+}

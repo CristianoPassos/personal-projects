@@ -1,0 +1,8 @@
+{
+  "name": "mobile",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.1.0",
+    "ngCordova": "v0.1.17-alpha"
+  }
+}
