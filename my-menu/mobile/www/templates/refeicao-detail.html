@@ -1,0 +1,34 @@
+<ion-view view-title="Refei&ccedil;&atilde;o">
+  <ion-content>
+    <div class="card">
+      <div class="item  item-text-wrap">
+        <h2 class="text-center">{{refeicao.titulo}}</h2>
+
+        <p>{{refeicao.descricao}}</p>
+      </div>
+
+      <div class="item item-image">
+        <img ng-src="{{refeicao.img}}">
+      </div>
+
+      <ion-list>
+        <ion-item ng-repeat="variacao in refeicao.variacoes">
+          <p> {{variacao.observacao}} </p>
+
+          <p> {{variacao.peso }} G - {{variacao.preco | currency:"R$"}} </p>
+
+          <div class="text-center">
+            <button class="button button-positive" ng-click="showConfirm()">
+              Comprar
+            </button>
+
+            <button class="button button-positive" ng-click="addToShop(variacao, refeicao.titulo)">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

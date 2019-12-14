@@ -1,0 +1,25 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "SPA para acesso Web do MeuMenu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristiano Passos",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-serve": "^0.1.6",
+    "bower": "^1.4.1"
+  },
+  "scripts": {
+    "bower": "bower update",
+    "prebower": "bower install",
+    "postinstall": "npm run bower",
+    "prestart": "npm install"
+  }
+}

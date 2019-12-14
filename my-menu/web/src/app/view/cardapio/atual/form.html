@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="page-header text-center">
+    <h1 class="text-center">Card&aacute;pio do Dia</h1>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="text-center">Nome</th>
+      <th class="text-center">A&ccedil;&otilde;es</th>
+    </tr>
+    </thead>
+
+    <tbody ng-show="ctrl.refeicoes.length">
+
+    <div ng-repeat="refeicao in ctrl.refeicoes">
+      <tr>
+        <td>{{refeicao.titulo}}</td>
+        <td class="text-center"><a class="btn btn-xs btn-info" href="#cardapio/refeicao/{{refeicao.id}}"
+                                   title="Editar"><i class="glyphicon glyphicon-pencil"></i></a>
+          <button class="btn btn-xs btn-danger" title="Remover" ng-click="ctrl.remover(refeicao.id)"><i
+            class="glyphicon glyphicon-remove"></i>
+          </button>
+        </td>
+      </tr>
+    </div>
+    </tbody>
+
+    <tr class="warning">
+      <td colspan="3" ng-hide="ctrl.refeicoes.length" class="text-center">Nenhuma refeição registrada</td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <a class="btn btn-primary" href="#cardapio/refeicao/"
+         title="Nova"><i class="glyphicon glyphicon-plus"></i></a>
+      <button type="button" class="btn btn-primary"
+              translate="comissaoRepasse.fechamentoManual.label.extrairPedidos"
+              ng-click="ctrl.downloadPedidos()" title="Baixar Pedidos"><i class="glyphicon glyphicon-save"></i>
+      </button>
+    </div>
+
+  </div>
+</div>

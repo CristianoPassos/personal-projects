@@ -1,0 +1,44 @@
+<ion-view view-title="Pedidos">
+  <ion-content class="padding">
+    <h3 ng-hide="pedidos.length" class="text-center">Nenhum pedido registrado.</h3>
+
+    <h1 ng-hide="pedidos.length" class="text-center ion-ios-list-outline larger"></h1>
+
+    <ion-list>
+      <ion-item ng-repeat="pedido in pedidos">
+        <small class="item-text-wrap">{{pedido.titulo}} - {{pedido.observacao}} - {{pedido.peso }} G - {{pedido.preco |
+          currency:"R$"}}
+        </small>
+
+        <div class="row row-center">
+          <div class="col">Qtd:</div>
+          <div class="col"><input ng-model="pedido.quantidade" disabled size="2"></div>
+          <div class="col">
+            <button class="button button-small button-positive icon ion-plus-round"
+                    ng-click="aumentarQuantidade(pedido)">
+            </button>
+          </div>
+          <div class="col">
+            <button class="button button-small button-energized icon ion-minus-round"
+                    ng-click="diminuirQuantidade(pedido)">
+            </button>
+          </div>
+          <div class="col">
+            <button class="button  button-small button-assertive icon ion-ios-close-empty"
+                    ng-click="removerPedido(pedido)">
+            </button>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <h3 ng-show="pedidos.length"> Valor Total: {{valorTotal | currency:"R$"}} </h3>
+
+    <button ng-show="pedidos.length" class="button button-block button-positive" ng-click="confirmarPedidos()">
+      Confirmar
+    </button>
+    <button ng-show="pedidos.length" class="button button-block button-royal" ng-click="limparCarrinho()">Limpar
+      Carrinho
+    </button>
+  </ion-content>
+</ion-view>
