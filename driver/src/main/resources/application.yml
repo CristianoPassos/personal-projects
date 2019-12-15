@@ -1,0 +1,14 @@
+spring:
+  h2.console.enabled: true
+  jpa:
+    show-sql: false
+    hibernate.ddl-auto: create-drop
+#set logging level because of bug in swagger-models dependency
+#it is already fixed but springfox hasn't released their project with the new dependency
+logging.level.io.swagger.models.parameters.AbstractSerializableParameter: ERROR
+
+
+com.driver.car.valid_seat_counts:
+  - 3
+  - 5
+  - 8

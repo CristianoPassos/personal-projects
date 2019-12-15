@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.cristiano</groupId>
+    <artifactId>driver</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>driver</name>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <io.springfox.springfox.version>2.9.2</io.springfox.springfox.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+
+        <dependency>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+
+        <dependency>
+            <artifactId>h2</artifactId>
+            <groupId>com.h2database</groupId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <artifactId>springfox-swagger2</artifactId>
+            <groupId>io.springfox</groupId>
+            <version>${io.springfox.springfox.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <groupId>io.springfox</groupId>
+            <version>${io.springfox.springfox.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>jaxb-api</artifactId>
+            <groupId>javax.xml.bind</groupId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>spotbugs</artifactId>
+            <groupId>com.github.spotbugs</groupId>
+            <version>3.1.12</version>
+        </dependency>
+
+        <!--Test-->
+        <dependency>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <artifactId>rest-assured</artifactId>
+            <groupId>io.rest-assured</groupId>
+            <scope>test</scope>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>rest-assured-all</artifactId>
+            <groupId>io.rest-assured</groupId>
+            <scope>test</scope>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>json-path</artifactId>
+            <groupId>io.rest-assured</groupId>
+            <scope>test</scope>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>hamcrest-json</artifactId>
+            <groupId>uk.co.datumedge</groupId>
+            <scope>test</scope>
+            <version>0.2</version>
+        </dependency>
+
+        <!--Provided-->
+        <dependency>
+            <artifactId>lombok</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <scope>provided</scope>
+            <version>1.18.10</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
