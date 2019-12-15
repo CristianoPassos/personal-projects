@@ -5,10 +5,6 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 |===
 | Project | Description | Technology
 
-| link:core-spring-5-exam[Core Spring 5.0 Exam Notes]
-| Notes for Core Spring 5.0 Exam
-| Java 12 :coffee:, Spring
-
 | link:marathon[Marathon]
 | As most as I can, I will solve and publish one challenge from https://www.dailycodingproblem.com[Daily Coding Problem]
 | Java 13
@@ -16,10 +12,6 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 | link:eso-wallpapers[ESO Wallpapers]
 | Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
 | Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
-
-| link:farm[Farm Service]
-| Fields management for farmers
-| Java 12, Swagger, Spring Boot, H2,
 
 | link:my-menu[My Menu]
 | This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web-Site (Angular) and Mobile App (Ionic), more details you can find in the description of the Project

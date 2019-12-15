@@ -10,10 +10,8 @@
 
     <modules>
         <module>marathon</module>
-        <module>driver</module>
         <module>flight</module>
         <module>eso-wallpapers</module>
-        <module>farm</module>
         <module>my-menu/backend</module>
         <module>oauth-service</module>
         <module>wakanda</module>
