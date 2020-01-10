@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise1.mars.main;
+
 import de.cristiano.flight.exercise1.mars.CommandCenter;
 import de.cristiano.flight.exercise1.mars.Robot;
 

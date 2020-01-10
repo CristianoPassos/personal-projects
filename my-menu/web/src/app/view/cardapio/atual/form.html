@@ -19,7 +19,7 @@
         <td>{{refeicao.titulo}}</td>
         <td class="text-center"><a class="btn btn-xs btn-info" href="#cardapio/refeicao/{{refeicao.id}}"
                                    title="Editar"><i class="glyphicon glyphicon-pencil"></i></a>
-          <button class="btn btn-xs btn-danger" title="Remover" ng-click="ctrl.remover(refeicao.id)"><i
+          <button class="btn btn-xs btn-danger" ng-click="ctrl.remover(refeicao.id)" title="Remover"><i
             class="glyphicon glyphicon-remove"></i>
           </button>
         </td>
@@ -28,7 +28,7 @@
     </tbody>
 
     <tr class="warning">
-      <td colspan="3" ng-hide="ctrl.refeicoes.length" class="text-center">Nenhuma refeição registrada</td>
+      <td class="text-center" colspan="3" ng-hide="ctrl.refeicoes.length">Nenhuma refeição registrada</td>
     </tr>
   </table>
 
@@ -36,9 +36,9 @@
     <div class="col-md-12 text-center">
       <a class="btn btn-primary" href="#cardapio/refeicao/"
          title="Nova"><i class="glyphicon glyphicon-plus"></i></a>
-      <button type="button" class="btn btn-primary"
-              translate="comissaoRepasse.fechamentoManual.label.extrairPedidos"
-              ng-click="ctrl.downloadPedidos()" title="Baixar Pedidos"><i class="glyphicon glyphicon-save"></i>
+      <button class="btn btn-primary" ng-click="ctrl.downloadPedidos()"
+              title="Baixar Pedidos"
+              translate="comissaoRepasse.fechamentoManual.label.extrairPedidos" type="button"><i class="glyphicon glyphicon-save"></i>
       </button>
     </div>
 

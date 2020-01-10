@@ -8,11 +8,11 @@ import br.com.cristiano.wakanda.view.BasicView;
 
 public class ExitCommand implements Command {
 
-	@Override
-	public void execute(Game game, BasicView view) {
-		view.printText(new ASCIIArt().createArt("game.exit"));
-		view.printMessage(("game.exit.author"));
-		WakandaProject.setExit(1);
-	}
+    @Override
+    public void execute(Game game, BasicView view) {
+        view.printText(new ASCIIArt().createArt("game.exit"));
+        view.printMessage(("game.exit.author"));
+        WakandaProject.setExit(1);
+    }
 
 }

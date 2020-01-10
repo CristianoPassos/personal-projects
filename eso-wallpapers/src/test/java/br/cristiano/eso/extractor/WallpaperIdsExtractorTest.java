@@ -16,8 +16,8 @@ public class WallpaperIdsExtractorTest {
         Set<String> wallpaperIds = extractor.extract("https://www.eso.org/public/images/archive/wallpapers/");
         assertEquals(50, wallpaperIds.size());
         assertThat(wallpaperIds, hasItems("eso1039a",
-            "vlt-brunier-nuit",
-            "potw1119a")
+                "vlt-brunier-nuit",
+                "potw1119a")
         );
     }
 }

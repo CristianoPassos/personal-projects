@@ -4,10 +4,10 @@ import static java.lang.String.format;
 
 /**
  * Hourglass array representation
- *
- *[0][0,1,2]
- *   [1][1]
- *[2][0, 1, 2]
+ * <p>
+ * [0][0,1,2]
+ * [1][1]
+ * [2][0, 1, 2]
  */
 public class Array2d {
 

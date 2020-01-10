@@ -4,35 +4,35 @@
     <h1>Inclus&atilde;o de Refei&ccedil;&atilde;o</h1>
   </div>
 
-  <form name="refeicaoForm" class="form">
+  <form class="form" name="refeicaoForm">
     <div class="form-group">
-      <input class="form-control" type="text" ng-model="ctrl.refeicao.titulo" placeholder="Nome" required>
+      <input class="form-control" ng-model="ctrl.refeicao.titulo" placeholder="Nome" required type="text">
     </div>
 
     <div class="form-group">
-        <textarea class="form-control" ng-model="ctrl.refeicao.descricao" placeholder="Descri&ccedil;&atilde;o" rows="5"
-                  required></textarea>
+        <textarea class="form-control" ng-model="ctrl.refeicao.descricao" placeholder="Descri&ccedil;&atilde;o" required
+                  rows="5"></textarea>
     </div>
   </form>
 
   <form name="variacaoForm" ng-submit="ctrl.salvarNovaVariacao()">
     <div class="row">
       <div class="col-xs-1">
-        <input class="form-control" ng-model="ctrl.novaVariacao.peso"
-               placeholder="Peso" required name="peso">
+        <input class="form-control" name="peso"
+               ng-model="ctrl.novaVariacao.peso" placeholder="Peso" required>
       </div>
       <div class="col-xs-1">
-        <input class="form-control" ng-model="ctrl.novaVariacao.preco"
-               placeholder="Pre&ccedil;o" required name="preco">
+        <input class="form-control" name="preco"
+               ng-model="ctrl.novaVariacao.preco" placeholder="Pre&ccedil;o" required>
       </div>
       <div class="col-xs-8">
-        <input class="form-control" ng-model="ctrl.novaVariacao.observacao"
-               placeholder="Observa&ccedil;&atilde;o" name="observacao">
+        <input class="form-control" name="observacao"
+               ng-model="ctrl.novaVariacao.observacao" placeholder="Observa&ccedil;&atilde;o">
       </div>
       <div class="col-xs-2">
-        <button class="btn btn-success" type="submit" title="Salvar"><i class="glyphicon glyphicon-ok"></i></button>
+        <button class="btn btn-success" title="Salvar" type="submit"><i class="glyphicon glyphicon-ok"></i></button>
 
-        <button class="btn btn-warning" type="button" ng-click="ctrl.iniciarNovaVariacao()" title="Limpar"><i
+        <button class="btn btn-warning" ng-click="ctrl.iniciarNovaVariacao()" title="Limpar" type="button"><i
           class="glyphicon glyphicon-remove"></i></button>
       </div>
     </div>
@@ -54,14 +54,14 @@
       <td>{{variacao.preco | currency }}</td>
       <td>{{variacao.observacao}}</td>
       <td class="text-center">
-        <button class="btn btn-xs btn-warning" title="Remover"
-                ng-click="ctrl.removerVariacao($index)"><i class="glyphicon  glyphicon-remove"></i></button>
+        <button class="btn btn-xs btn-warning" ng-click="ctrl.removerVariacao($index)"
+                title="Remover"><i class="glyphicon  glyphicon-remove"></i></button>
       </td>
     </tr>
     </tbody>
 
     <tr class="warning">
-      <td colspan="4" ng-hide="ctrl.refeicao.variacoes.length" class="text-center">Nenhuma variação registrada</td>
+      <td class="text-center" colspan="4" ng-hide="ctrl.refeicao.variacoes.length">Nenhuma variação registrada</td>
     </tr>
   </table>
 

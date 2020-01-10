@@ -29,12 +29,12 @@ public class WallpaperIdsExtractor {
             InputStream inputStream = urlConnection.getInputStream();
             String html = IOUtils.toString(inputStream, Charset.defaultCharset());
             pageIds = Pattern
-                .compile(WALLPAPER_PAGE_REGEX)
-                .matcher(html)
-                .results()
-                .map(foundId -> foundId.group())
-                .map(id -> cleanId(id))
-                .collect(Collectors.toSet());
+                    .compile(WALLPAPER_PAGE_REGEX)
+                    .matcher(html)
+                    .results()
+                    .map(foundId -> foundId.group())
+                    .map(id -> cleanId(id))
+                    .collect(Collectors.toSet());
         } catch (IOException e) {
             log.error("Error extracting wallpaper ids of " + wallpapersPageUrl, e);
         }
@@ -45,7 +45,7 @@ public class WallpaperIdsExtractor {
     private String cleanId(String id) {
         //TODO: Improve logic
         return id.replaceAll("id: '", "")
-            .replaceAll("',", "")
-            .trim();
+                .replaceAll("',", "")
+                .trim();
     }
 }

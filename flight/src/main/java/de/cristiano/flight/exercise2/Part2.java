@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise2;
+
 public class Part2 {
 
     void countUpAndDown(int start, int end) {

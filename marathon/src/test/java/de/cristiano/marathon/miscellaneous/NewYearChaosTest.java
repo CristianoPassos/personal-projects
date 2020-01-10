@@ -1,6 +1,5 @@
 package de.cristiano.marathon.miscellaneous;
 
-import de.cristiano.marathon.miscellaneous.NewYearChaos;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

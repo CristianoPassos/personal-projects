@@ -1,4 +1,3 @@
-
 package br.com.meumenu.rest;
 
 import javax.ws.rs.ApplicationPath;

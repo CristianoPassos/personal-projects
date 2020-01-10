@@ -1,21 +1,21 @@
 package br.com.cristiano.wakanda.model.cities;
 
+import br.com.cristiano.wakanda.model.characters.BaseCharacter;
+
 import java.io.Serializable;
 import java.util.List;
 
-import br.com.cristiano.wakanda.model.characters.BaseCharacter;
-
 public interface City extends Serializable {
 
-	public String getCityName();
+    public String getCityName();
 
-	public String getCityType();
+    public String getCityType();
 
-	public BaseCharacter getEnemy();
+    public BaseCharacter getEnemy();
 
-	public int[] getNearByCitiesIndexes();
+    public int[] getNearByCitiesIndexes();
 
-	public List<String> listNearByCities();
+    public List<String> listNearByCities();
 
-	public City recoverNearCityByIndex(int id);
+    public City recoverNearCityByIndex(int id);
 }

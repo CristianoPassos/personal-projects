@@ -16,7 +16,7 @@ oauth.clients:
     authorities: role_client,role_trusted_client
     access_token_validity: 900
     refresh_token_validity: 2592000
-  
+
   - client_id: client-two
     client_secret: client-two-secret
     scope: read,write,trust

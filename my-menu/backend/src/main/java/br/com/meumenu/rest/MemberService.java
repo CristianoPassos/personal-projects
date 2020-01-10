@@ -16,27 +16,20 @@
  */
 package br.com.meumenu.rest;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
+import br.com.meumenu.data.MemberRepository;
+import br.com.meumenu.model.Member;
+import br.com.meumenu.service.MemberRegistration;
 
 import javax.inject.Inject;
 import javax.persistence.NoResultException;
 import javax.validation.ValidationException;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import br.com.meumenu.data.MemberRepository;
-import br.com.meumenu.model.Member;
-import br.com.meumenu.service.MemberRegistration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * JAX-RS Example
@@ -48,83 +41,80 @@ import br.com.meumenu.service.MemberRegistration;
 // @RequestScoped
 // @Stateful
 public class MemberService {
-	@Inject
-	private Logger log;
+    @Inject
+    MemberRegistration registration;
+    @Inject
+    private Logger log;
+    @Inject
+    private MemberRepository repository;
 
-	@Inject
-	private MemberRepository repository;
+    /**
+     * Creates a new member from the values provided. Performs validation, and
+     * will return a JAX-RS response with either 200 ok, or with a map of
+     * fields, and related errors.
+     */
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createMember(Member member) {
 
-	@Inject
-	MemberRegistration registration;
+        Response.ResponseBuilder builder = null;
 
-	/**
-	 * Creates a new member from the values provided. Performs validation, and
-	 * will return a JAX-RS response with either 200 ok, or with a map of
-	 * fields, and related errors.
-	 */
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response createMember(Member member) {
+        try {
 
-		Response.ResponseBuilder builder = null;
+            registration.register(member);
 
-		try {
+            // Create an "ok" response
+            builder = Response.ok().entity(member);
+        } catch (ValidationException e) {
+            // Handle the unique constrain violation
+            Map<String, String> responseObj = new HashMap<>();
+            responseObj.put("email", "Email taken");
+            builder = Response.status(Response.Status.CONFLICT).entity(responseObj);
+        } catch (Exception e) {
+            // Handle generic exceptions
+            Map<String, String> responseObj = new HashMap<>();
+            responseObj.put("error", e.getMessage());
+            builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
+        }
 
-			registration.register(member);
+        return builder.build();
+    }
 
-			// Create an "ok" response
-			builder = Response.ok().entity(member);
-		} catch (ValidationException e) {
-			// Handle the unique constrain violation
-			Map<String, String> responseObj = new HashMap<>();
-			responseObj.put("email", "Email taken");
-			builder = Response.status(Response.Status.CONFLICT).entity(responseObj);
-		} catch (Exception e) {
-			// Handle generic exceptions
-			Map<String, String> responseObj = new HashMap<>();
-			responseObj.put("error", e.getMessage());
-			builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
-		}
+    /**
+     * Checks if a member with the same email address is already registered.
+     * This is the only way to easily capture the
+     * "@UniqueConstraint(columnNames = "email")" constraint from the Member
+     * class.
+     *
+     * @param email The email to check
+     * @return True if the email already exists, and false otherwise
+     */
+    public boolean emailAlreadyExists(String email) {
+        Member member = null;
+        try {
+            member = repository.findByEmail(email);
+        } catch (NoResultException e) {
+            // ignore
+        }
+        return member != null;
+    }
 
-		return builder.build();
-	}
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Member> listAllMembers() {
+        return repository.findAllOrderedByName();
+    }
 
-	/**
-	 * Checks if a member with the same email address is already registered.
-	 * This is the only way to easily capture the
-	 * "@UniqueConstraint(columnNames = "email")" constraint from the Member
-	 * class.
-	 * 
-	 * @param email
-	 *            The email to check
-	 * @return True if the email already exists, and false otherwise
-	 */
-	public boolean emailAlreadyExists(String email) {
-		Member member = null;
-		try {
-			member = repository.findByEmail(email);
-		} catch (NoResultException e) {
-			// ignore
-		}
-		return member != null;
-	}
-
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Member> listAllMembers() {
-		return repository.findAllOrderedByName();
-	}
-
-	@GET
-	@Path("/{id:[0-9][0-9]*}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Member lookupMemberById(@PathParam("id") long id) {
-		Member member = repository.findById(id);
-		if (member == null) {
-			throw new WebApplicationException(Response.Status.NOT_FOUND);
-		}
-		return member;
-	}
+    @GET
+    @Path("/{id:[0-9][0-9]*}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Member lookupMemberById(@PathParam("id") long id) {
+        Member member = repository.findById(id);
+        if (member == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+        return member;
+    }
 
 }

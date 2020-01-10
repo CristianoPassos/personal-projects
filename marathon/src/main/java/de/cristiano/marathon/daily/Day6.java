@@ -14,7 +14,7 @@ class Day6 {
         final Map<Integer, Integer> lookupTable = new HashMap<>();
 
         for (int index = 0; index < array.length; index++) {
-            final int complement =  target - array[index];
+            final int complement = target - array[index];
 
             if (lookupTable.containsKey(complement)) {
                 return new int[]{lookupTable.get(complement), index};

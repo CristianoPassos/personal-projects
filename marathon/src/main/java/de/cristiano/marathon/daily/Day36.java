@@ -54,7 +54,7 @@ public class Day36 {
 
         @Override
         public String toString() {
-            return  Integer.toString(value);
+            return Integer.toString(value);
         }
     }
 }

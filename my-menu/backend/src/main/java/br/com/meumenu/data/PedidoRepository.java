@@ -16,9 +16,8 @@
  */
 package br.com.meumenu.data;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import br.com.meumenu.excel.PedidoExcel;
+import br.com.meumenu.model.cardapio.Refeicao;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -26,54 +25,54 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
-import br.com.meumenu.excel.PedidoExcel;
-import br.com.meumenu.model.cardapio.Refeicao;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @ApplicationScoped
 public class PedidoRepository {
 
-	@Inject
-	private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-	public List<PedidoExcel> findAllByDate(LocalDate now) {
-		List<PedidoExcel> pedidos = new ArrayList<PedidoExcel>();
-		PedidoExcel excel = new PedidoExcel();
-		excel.setCliente("Cliente");
-		excel.setObservacao("Observação");
-		excel.setRefeicao("Refeição");
-		excel.setTamanho("Tamanho");
-		excel.setTelefone("3133968");
-		pedidos.add(excel);
-		return pedidos;
-	}
+    public List<PedidoExcel> findAllByDate(LocalDate now) {
+        List<PedidoExcel> pedidos = new ArrayList<PedidoExcel>();
+        PedidoExcel excel = new PedidoExcel();
+        excel.setCliente("Cliente");
+        excel.setObservacao("Observação");
+        excel.setRefeicao("Refeição");
+        excel.setTamanho("Tamanho");
+        excel.setTelefone("3133968");
+        pedidos.add(excel);
+        return pedidos;
+    }
 
-	public List<Refeicao> findAllOrderedByName() {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
-		Root<Refeicao> member = criteria.from(Refeicao.class);
-		// Swap criteria statements if you would like to try out type-safe
-		// criteria queries, a new
-		// feature in JPA 2.0
-		// criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
-		criteria.select(member).orderBy(cb.asc(member.get("name")));
-		return em.createQuery(criteria).getResultList();
-	}
+    public List<Refeicao> findAllOrderedByName() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
+        Root<Refeicao> member = criteria.from(Refeicao.class);
+        // Swap criteria statements if you would like to try out type-safe
+        // criteria queries, a new
+        // feature in JPA 2.0
+        // criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
+        criteria.select(member).orderBy(cb.asc(member.get("name")));
+        return em.createQuery(criteria).getResultList();
+    }
 
-	public Refeicao findByEmail(String email) {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
-		Root<Refeicao> member = criteria.from(Refeicao.class);
-		// Swap criteria statements if you would like to try out type-safe
-		// criteria queries, a new
-		// feature in JPA 2.0
-		// criteria.select(member).where(cb.equal(member.get(Member_.name),
-		// email));
-		criteria.select(member).where(cb.equal(member.get("email"), email));
-		return em.createQuery(criteria).getSingleResult();
-	}
+    public Refeicao findByEmail(String email) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
+        Root<Refeicao> member = criteria.from(Refeicao.class);
+        // Swap criteria statements if you would like to try out type-safe
+        // criteria queries, a new
+        // feature in JPA 2.0
+        // criteria.select(member).where(cb.equal(member.get(Member_.name),
+        // email));
+        criteria.select(member).where(cb.equal(member.get("email"), email));
+        return em.createQuery(criteria).getSingleResult();
+    }
 
-	public Refeicao findById(Long id) {
-		return em.find(Refeicao.class, id);
-	}
+    public Refeicao findById(Long id) {
+        return em.find(Refeicao.class, id);
+    }
 }

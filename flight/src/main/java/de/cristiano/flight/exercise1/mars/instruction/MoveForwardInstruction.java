@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise1.mars.instruction;
+
 import de.cristiano.flight.exercise1.mars.Robot;
 
 import javax.annotation.Nonnull;

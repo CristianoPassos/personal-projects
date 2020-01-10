@@ -4,12 +4,12 @@
 <head>
   <title>::: Cristiano Passos :::</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta charset="UTF-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,29 +29,29 @@
 </nav>
 
 <div class="container" ng-controller="AlertCtrl as ctrl">
-  <alert ng-repeat="alert in ctrl.alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)">{{alert.msg}}</alert>
+  <alert close="ctrl.closeAlert($index)" ng-repeat="alert in ctrl.alerts" type="{{alert.type}}">{{alert.msg}}</alert>
 </div>
 
 <div ng-view></div>
 
-<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-<script type="text/javascript" src="bower_components/file-saver.js/FileSaver.js"></script>
+<script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+<script src="bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+<script src="bower_components/file-saver.js/FileSaver.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="src/app/app.js"></script>
+<script src="src/app/app.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="src/app/commons/controller/alertCtrl.js"></script>
-<script type="text/javascript" src="src/app/commons/utils/converterUtils.js"></script>
+<script src="src/app/commons/controller/alertCtrl.js" type="text/javascript"></script>
+<script src="src/app/commons/utils/converterUtils.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="src/app/view/cardapio/cardapio.js"></script>
-<script type="text/javascript" src="src/app/view/cardapio/routes.js"></script>
-<script type="text/javascript" src="src/app/view/cardapio/atual/cardapioCtrl.js"></script>
-<script type="text/javascript" src="src/app/view/cardapio/refeicao/refeicaoCtrl.js"></script>
+<script src="src/app/view/cardapio/cardapio.js" type="text/javascript"></script>
+<script src="src/app/view/cardapio/routes.js" type="text/javascript"></script>
+<script src="src/app/view/cardapio/atual/cardapioCtrl.js" type="text/javascript"></script>
+<script src="src/app/view/cardapio/refeicao/refeicaoCtrl.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="src/app/commons/service/cardapioServ.js"></script>
-<script type="text/javascript" src="src/app/commons/service/alertServ.js"></script>
-<script type="text/javascript" src="src/app/commons/service/pedidoServ.js"></script>
+<script src="src/app/commons/service/cardapioServ.js" type="text/javascript"></script>
+<script src="src/app/commons/service/alertServ.js" type="text/javascript"></script>
+<script src="src/app/commons/service/pedidoServ.js" type="text/javascript"></script>
 
 </body>
 </html>

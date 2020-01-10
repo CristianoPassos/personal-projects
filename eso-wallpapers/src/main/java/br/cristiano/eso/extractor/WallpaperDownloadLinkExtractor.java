@@ -18,11 +18,11 @@ public class WallpaperDownloadLinkExtractor {
 
     static {
         wallpaperSizes = Arrays.asList(
-            ":containsOwn(2048x1536)",
-            ":containsOwn(1920x1200)",
-            ":containsOwn(1600x1200)",
-            ":containsOwn(1280x1024)",
-            ":containsOwn(1024x768)"
+                ":containsOwn(2048x1536)",
+                ":containsOwn(1920x1200)",
+                ":containsOwn(1600x1200)",
+                ":containsOwn(1280x1024)",
+                ":containsOwn(1024x768)"
         );
     }
 
@@ -38,7 +38,7 @@ public class WallpaperDownloadLinkExtractor {
 
             Document document = Jsoup.connect(wallpaperPageUrl).get();
             url = extractWallpaperDownloadElement(document)
-                .attr("href");
+                    .attr("href");
 
             log.info("URL extracted: {}", url);
         } catch (IOException e) {

@@ -22,11 +22,11 @@ public class WallpaperNextPageExtractor {
             log.info("Extracting next page of {}", wallpapersPageUrl);
 
             nextPage = Optional.ofNullable(
-                Jsoup.connect(wallpapersPageUrl)
-                    .get()
-                    .selectFirst(NEXT_PAGE_SELECTOR))
-                .map(page -> page.attr("href"))
-                .map(page -> ESO_HOST + page);
+                    Jsoup.connect(wallpapersPageUrl)
+                            .get()
+                            .selectFirst(NEXT_PAGE_SELECTOR))
+                    .map(page -> page.attr("href"))
+                    .map(page -> ESO_HOST + page);
 
             nextPage.ifPresent(page -> log.info(format("Page found [%s]", page)));
         } catch (IOException e) {

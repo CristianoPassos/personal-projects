@@ -10,7 +10,7 @@ class Day53Test {
     private final Day53 day53 = new Day53();
 
     @Test
-    public void queue_shouldSucceed(){
+    public void queue_shouldSucceed() {
         //Given
         day53.enqueue(1);
         day53.enqueue(2);

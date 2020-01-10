@@ -5,6 +5,6 @@ import br.com.cristiano.wakanda.view.BasicView;
 
 public interface Command {
 
-	public void execute(Game game, BasicView view);
+    public void execute(Game game, BasicView view);
 
 }

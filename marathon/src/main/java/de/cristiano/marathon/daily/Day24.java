@@ -8,13 +8,11 @@ import static java.util.Objects.nonNull;
 public class Day24 {
 
     final char value;
-
-    private boolean locked;
-    private int decedentLocks = 0;
-
     Day24 parent;
     Day24 left;
     Day24 right;
+    private boolean locked;
+    private int decedentLocks = 0;
 
     public Day24(char value) {
         this.value = value;

@@ -16,23 +16,15 @@
  */
 package br.com.meumenu.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.regex.Pattern;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.WriteListener;
+import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.regex.Pattern;
 
 /**
  * <p>
@@ -43,19 +35,16 @@ import javax.servlet.http.HttpServletResponseWrapper;
  * To qualify for wrapping the request must be made to the <i>/rest/*</i> path, and contain a query parameter call
  * <i>jsoncallback</> that defines the JSONP callback method to use with the response.
  * </p>
- * 
+ *
  * @author balunasj
- * 
  */
 @WebFilter("/rest/*")
 public class JSONPRequestFilter implements Filter {
-    // The callback method to use
-    private static final String CALLBACK_METHOD = "jsonpcallback";
-
     // This is a simple safe pattern check for the callback method
     public static final Pattern SAFE_PRN = Pattern.compile("[a-zA-Z0-9_\\.]+");
-
     public static final String CONTENT_TYPE = "application/javascript";
+    // The callback method to use
+    private static final String CALLBACK_METHOD = "jsonpcallback";
 
     @Override
     public void init(FilterConfig config) throws ServletException {

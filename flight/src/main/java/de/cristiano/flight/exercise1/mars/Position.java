@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise1.mars;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

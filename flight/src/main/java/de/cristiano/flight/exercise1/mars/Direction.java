@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise1.mars;
+
 import lombok.Getter;
 
 import javax.annotation.Nonnull;

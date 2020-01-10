@@ -1,107 +1,97 @@
 package br.com.meumenu.rest;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import br.com.meumenu.data.RefeicaoRepository;
+import br.com.meumenu.model.cardapio.Refeicao;
+import br.com.meumenu.service.CarpadioService;
 
 import javax.ejb.Stateful;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.validation.ConstraintViolationException;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import br.com.meumenu.data.RefeicaoRepository;
-import br.com.meumenu.model.cardapio.Refeicao;
-import br.com.meumenu.service.CarpadioService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Path("/fornecedor/{fornecedor:[0-9]*}/cardapio")
 @RequestScoped
 @Stateful
 public class CardapioRest extends AbstractRest {
 
-	@Inject
-	private RefeicaoRepository repository;
+    @Inject
+    CarpadioService registration;
+    @Inject
+    private RefeicaoRepository repository;
+    @PathParam("fornecedor")
+    private int idFornecedor;
 
-	@Inject
-	CarpadioService registration;
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response buscarCarpadio() {
+        List<Refeicao> refeicoes = repository.findByFornecedor(idFornecedor);
+        return Response.ok(refeicoes).build();
+    }
 
-	@PathParam("fornecedor")
-	private int idFornecedor;
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response create(Refeicao refeicao) {
+        Response.ResponseBuilder builder = null;
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscarCarpadio() {
-		List<Refeicao> refeicoes = repository.findByFornecedor(idFornecedor);
-		return Response.ok(refeicoes).build();
-	}
+        try {
+            registration.register(refeicao, idFornecedor);
 
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response create(Refeicao refeicao) {
-		Response.ResponseBuilder builder = null;
+            builder = Response.ok().entity(refeicao);
+        } catch (ConstraintViolationException ce) {
+            builder = createViolationResponse(ce.getConstraintViolations());
+        } catch (Exception e) {
+            Map<String, String> responseObj = new HashMap<>();
+            responseObj.put("error", e.getMessage());
+            builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
+        }
 
-		try {
-			registration.register(refeicao, idFornecedor);
+        return builder.build();
+    }
 
-			builder = Response.ok().entity(refeicao);
-		} catch (ConstraintViolationException ce) {
-			builder = createViolationResponse(ce.getConstraintViolations());
-		} catch (Exception e) {
-			Map<String, String> responseObj = new HashMap<>();
-			responseObj.put("error", e.getMessage());
-			builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
-		}
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete() {
+        Response.ResponseBuilder builder = null;
 
-		return builder.build();
-	}
+        try {
 
-	@DELETE
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response delete() {
-		Response.ResponseBuilder builder = null;
+            builder = Response.ok();
+        } catch (ConstraintViolationException ce) {
+            builder = createViolationResponse(ce.getConstraintViolations());
+        } catch (Exception e) {
+            Map<String, String> responseObj = new HashMap<>();
+            responseObj.put("error", e.getMessage());
+            builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
+        }
 
-		try {
+        return builder.build();
+    }
 
-			builder = Response.ok();
-		} catch (ConstraintViolationException ce) {
-			builder = createViolationResponse(ce.getConstraintViolations());
-		} catch (Exception e) {
-			Map<String, String> responseObj = new HashMap<>();
-			responseObj.put("error", e.getMessage());
-			builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
-		}
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response update(Refeicao refeicao) {
+        Response.ResponseBuilder builder = null;
 
-		return builder.build();
-	}
+        try {
+            registration.update(refeicao);
 
-	@PUT
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response update(Refeicao refeicao) {
-		Response.ResponseBuilder builder = null;
+            builder = Response.ok();
+        } catch (ConstraintViolationException ce) {
+            builder = createViolationResponse(ce.getConstraintViolations());
+        } catch (Exception e) {
+            Map<String, String> responseObj = new HashMap<>();
+            responseObj.put("error", e.getMessage());
+            builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
+        }
 
-		try {
-			registration.update(refeicao);
-
-			builder = Response.ok();
-		} catch (ConstraintViolationException ce) {
-			builder = createViolationResponse(ce.getConstraintViolations());
-		} catch (Exception e) {
-			Map<String, String> responseObj = new HashMap<>();
-			responseObj.put("error", e.getMessage());
-			builder = Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
-		}
-
-		return builder.build();
-	}
+        return builder.build();
+    }
 }

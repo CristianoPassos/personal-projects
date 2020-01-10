@@ -6,15 +6,15 @@ import br.com.cristiano.wakanda.view.ExecuteCommandView;
 
 public class RunCommandController extends BaseController<ExecuteCommandView> {
 
-	public RunCommandController() {
-		super(new ExecuteCommandView());
-	}
+    public RunCommandController() {
+        super(new ExecuteCommandView());
+    }
 
-	public void executePlayerCommand() {
-		view.printMessage("game.command.ask.user.input");
-		Command command = view.readCommand();
-		view.clear();
-		command.execute(WakandaProject.getGameInPlay(), view);
-	}
+    public void executePlayerCommand() {
+        view.printMessage("game.command.ask.user.input");
+        Command command = view.readCommand();
+        view.clear();
+        command.execute(WakandaProject.getGameInPlay(), view);
+    }
 
 }

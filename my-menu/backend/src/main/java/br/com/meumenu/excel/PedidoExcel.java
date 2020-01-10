@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class PedidoExcel {
-	private String tamanho;
-	private String observacao;
-	private String cliente;
-	private String telefone;
-	private String refeicao;
+    private String tamanho;
+    private String observacao;
+    private String cliente;
+    private String telefone;
+    private String refeicao;
 }

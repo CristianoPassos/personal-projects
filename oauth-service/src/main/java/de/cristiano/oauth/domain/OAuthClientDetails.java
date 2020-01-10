@@ -1,4 +1,5 @@
 package de.cristiano.oauth.domain;
+
 import lombok.Data;
 
 import java.util.List;

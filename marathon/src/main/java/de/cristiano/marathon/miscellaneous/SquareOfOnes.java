@@ -11,7 +11,7 @@ public class SquareOfOnes {
 
     int maxSquare(int[][] matrix) {
 
-        Map<Integer,Integer> frequency = new HashMap<>();
+        Map<Integer, Integer> frequency = new HashMap<>();
 
         int maxSquareSize = 0;
 

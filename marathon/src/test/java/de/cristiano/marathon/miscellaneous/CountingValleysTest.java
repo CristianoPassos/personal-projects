@@ -1,5 +1,5 @@
 package de.cristiano.marathon.miscellaneous;
-import de.cristiano.marathon.miscellaneous.CountingValleys;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

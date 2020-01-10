@@ -3,7 +3,7 @@ package de.cristiano.marathon.daily;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static java.util.Comparator.*;
+import static java.util.Comparator.naturalOrder;
 
 public class Day23 {
 

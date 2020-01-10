@@ -1,4 +1,5 @@
 package de.cristiano.oauth.config;
+
 import de.cristiano.oauth.service.CustomTokenStore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -60,18 +61,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .userDetailsService(userDetailsService())
+                .userDetailsService(userDetailsService())
         ;
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-            .csrf().disable()
-            .anonymous().and()
-            .authorizeRequests()
-            .antMatchers("/oauth/token").permitAll()
-            .antMatchers("/oauth/check_token").permitAll()
+                .csrf().disable()
+                .anonymous().and()
+                .authorizeRequests()
+                .antMatchers("/oauth/token").permitAll()
+                .antMatchers("/oauth/check_token").permitAll()
         ;
     }
 }

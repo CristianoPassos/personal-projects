@@ -1,8 +1,8 @@
 <ion-view view-title="Pedidos">
   <ion-content class="padding">
-    <h3 ng-hide="pedidos.length" class="text-center">Nenhum pedido registrado.</h3>
+    <h3 class="text-center" ng-hide="pedidos.length">Nenhum pedido registrado.</h3>
 
-    <h1 ng-hide="pedidos.length" class="text-center ion-ios-list-outline larger"></h1>
+    <h1 class="text-center ion-ios-list-outline larger" ng-hide="pedidos.length"></h1>
 
     <ion-list>
       <ion-item ng-repeat="pedido in pedidos">
@@ -12,7 +12,7 @@
 
         <div class="row row-center">
           <div class="col">Qtd:</div>
-          <div class="col"><input ng-model="pedido.quantidade" disabled size="2"></div>
+          <div class="col"><input disabled ng-model="pedido.quantidade" size="2"></div>
           <div class="col">
             <button class="button button-small button-positive icon ion-plus-round"
                     ng-click="aumentarQuantidade(pedido)">
@@ -34,10 +34,10 @@
 
     <h3 ng-show="pedidos.length"> Valor Total: {{valorTotal | currency:"R$"}} </h3>
 
-    <button ng-show="pedidos.length" class="button button-block button-positive" ng-click="confirmarPedidos()">
+    <button class="button button-block button-positive" ng-click="confirmarPedidos()" ng-show="pedidos.length">
       Confirmar
     </button>
-    <button ng-show="pedidos.length" class="button button-block button-royal" ng-click="limparCarrinho()">Limpar
+    <button class="button button-block button-royal" ng-click="limparCarrinho()" ng-show="pedidos.length">Limpar
       Carrinho
     </button>
   </ion-content>

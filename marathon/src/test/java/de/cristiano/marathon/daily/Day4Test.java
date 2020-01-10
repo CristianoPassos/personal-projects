@@ -1,6 +1,5 @@
 package de.cristiano.marathon.daily;
 
-import de.cristiano.marathon.daily.Day4;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

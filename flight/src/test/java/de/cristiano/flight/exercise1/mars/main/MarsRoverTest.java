@@ -1,4 +1,5 @@
 package de.cristiano.flight.exercise1.mars.main;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -6,41 +6,41 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class CatsAndMouse {
-	static String catAndMouse(int x, int y, int z) {
-		int distanceCatA = Math.abs(x - z);
-		int distanceCatB = Math.abs(y - z);
+    private static final Scanner scan = new Scanner(System.in);
 
-		if (distanceCatA == distanceCatB) {
-			return "Mouse C";
-		} else if (distanceCatA < distanceCatB) {
-			return "Cat A";
-		} else {
-			return "Cat B";
-		}
-	}
+    static String catAndMouse(int x, int y, int z) {
+        int distanceCatA = Math.abs(x - z);
+        int distanceCatB = Math.abs(y - z);
 
-	private static final Scanner scan = new Scanner(System.in);
+        if (distanceCatA == distanceCatB) {
+            return "Mouse C";
+        } else if (distanceCatA < distanceCatB) {
+            return "Cat A";
+        } else {
+            return "Cat B";
+        }
+    }
 
-	public static void main(String[] args) throws IOException {
-		BufferedWriter bw = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-		int q = Integer.parseInt(scan.nextLine().trim());
+        int q = Integer.parseInt(scan.nextLine().trim());
 
-		for (int qItr = 0; qItr < q; qItr++) {
-			String[] xyz = scan.nextLine().split(" ");
+        for (int qItr = 0; qItr < q; qItr++) {
+            String[] xyz = scan.nextLine().split(" ");
 
-			int x = Integer.parseInt(xyz[0].trim());
+            int x = Integer.parseInt(xyz[0].trim());
 
-			int y = Integer.parseInt(xyz[1].trim());
+            int y = Integer.parseInt(xyz[1].trim());
 
-			int z = Integer.parseInt(xyz[2].trim());
+            int z = Integer.parseInt(xyz[2].trim());
 
-			String result = catAndMouse(x, y, z);
+            String result = catAndMouse(x, y, z);
 
-			bw.write(result);
-			bw.newLine();
-		}
+            bw.write(result);
+            bw.newLine();
+        }
 
-		bw.close();
-	}
+        bw.close();
+    }
 }

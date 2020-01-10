@@ -7,10 +7,10 @@ import br.com.cristiano.wakanda.view.util.MessagesUtils;
 
 public class ListCommand implements Command {
 
-	@Override
-	public void execute(Game game, BasicView view) {
-		view.printMessage("game.command.list.commands");
-		view.printText(MessagesUtils.getAllByPrefix("game.command.list.commands.describe"));
-	}
+    @Override
+    public void execute(Game game, BasicView view) {
+        view.printMessage("game.command.list.commands");
+        view.printText(MessagesUtils.getAllByPrefix("game.command.list.commands.describe"));
+    }
 
 }

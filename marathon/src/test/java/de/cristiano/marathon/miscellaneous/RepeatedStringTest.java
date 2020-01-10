@@ -1,6 +1,5 @@
 package de.cristiano.marathon.miscellaneous;
 
-import de.cristiano.marathon.miscellaneous.RepeatedString;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

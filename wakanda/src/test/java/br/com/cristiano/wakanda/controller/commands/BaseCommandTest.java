@@ -5,12 +5,12 @@ import br.com.cristiano.wakanda.view.BasicView;
 
 public abstract class BaseCommandTest extends BaseTest {
 
-	protected Command command;
-	protected BasicView view = new BasicView();
+    protected Command command;
+    protected BasicView view = new BasicView();
 
-	public BaseCommandTest(Command command) {
-		super();
-		this.command = command;
-	}
+    public BaseCommandTest(Command command) {
+        super();
+        this.command = command;
+    }
 
 }

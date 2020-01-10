@@ -16,7 +16,9 @@
  */
 package br.com.meumenu.data;
 
-import java.util.List;
+import br.com.meumenu.model.cadastro.Fornecedor;
+import br.com.meumenu.model.cardapio.Refeicao;
+import br.com.meumenu.model.cardapio.Refeicao_;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -26,52 +28,49 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
-
-import br.com.meumenu.model.cadastro.Fornecedor;
-import br.com.meumenu.model.cardapio.Refeicao;
-import br.com.meumenu.model.cardapio.Refeicao_;
+import java.util.List;
 
 @ApplicationScoped
 public class RefeicaoRepository {
 
-	@Inject
-	private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-	public List<Refeicao> findAllOrderedByName() {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
-		Root<Refeicao> member = criteria.from(Refeicao.class);
-		criteria.select(member);
-		return em.createQuery(criteria).getResultList();
-	}
+    public List<Refeicao> findAllOrderedByName() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Refeicao> criteria = cb.createQuery(Refeicao.class);
+        Root<Refeicao> member = criteria.from(Refeicao.class);
+        criteria.select(member);
+        return em.createQuery(criteria).getResultList();
+    }
 
-	public List<Refeicao> findByFornecedor(int idFornecedor) {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Refeicao> query = cb.createQuery(Refeicao.class);
-		Root<Refeicao> root = query.from(Refeicao.class);
+    public List<Refeicao> findByFornecedor(int idFornecedor) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Refeicao> query = cb.createQuery(Refeicao.class);
+        Root<Refeicao> root = query.from(Refeicao.class);
 
-		root.fetch(Refeicao_.variacoes, JoinType.LEFT);
+        root.fetch(Refeicao_.variacoes, JoinType.LEFT);
 
-		query.where(cb.equal(root.get(Refeicao_.fornecedor), new Fornecedor(idFornecedor)));
-		query.distinct(true);
+        query.where(cb.equal(root.get(Refeicao_.fornecedor), new Fornecedor(idFornecedor)));
+        query.distinct(true);
 
-		return em.createQuery(query).getResultList();
-	}
+        return em.createQuery(query).getResultList();
+    }
 
-	public Refeicao findById(Integer id) {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Refeicao> query = cb.createQuery(Refeicao.class);
-		Root<Refeicao> root = query.from(Refeicao.class);
+    public Refeicao findById(Integer id) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Refeicao> query = cb.createQuery(Refeicao.class);
+        Root<Refeicao> root = query.from(Refeicao.class);
 
-		root.fetch(Refeicao_.variacoes, JoinType.LEFT);
+        root.fetch(Refeicao_.variacoes, JoinType.LEFT);
 
-		query.where(cb.equal(root.get(Refeicao_.id), id));
+        query.where(cb.equal(root.get(Refeicao_.id), id));
 
-		try {
-			return em.createQuery(query).getSingleResult();
-		} catch (NoResultException e) {
-			return new Refeicao();
-		}
-	}
+        try {
+            return em.createQuery(query).getSingleResult();
+        } catch (NoResultException e) {
+            return new Refeicao();
+        }
+    }
 
 }

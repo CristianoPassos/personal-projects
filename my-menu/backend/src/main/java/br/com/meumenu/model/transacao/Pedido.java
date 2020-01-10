@@ -16,19 +16,14 @@
  */
 package br.com.meumenu.model.transacao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlRootElement;
-
 import br.com.meumenu.model.cadastro.Usuario;
 import br.com.meumenu.model.cardapio.Variacao;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
@@ -37,18 +32,18 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(of = "id")
 public class Pedido {
 
-	@Id
-	@GeneratedValue
-	private Integer id;
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name = "usuario_id")
-	private Usuario usuario;
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-	@NotNull
-	@ManyToOne()
-	@JoinColumn(name = "variacao_id")
-	private Variacao variacao;
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "variacao_id")
+    private Variacao variacao;
 
 }

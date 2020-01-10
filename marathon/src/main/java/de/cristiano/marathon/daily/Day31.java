@@ -46,12 +46,8 @@ public class Day31 {
     }
 
     static class Operation {
-        enum Value {INSERT, DELETE, SUBSTITUTE}
-
         final Value value;
-
         final Character character;
-
         final int position;
 
         public Operation(Value value, Character character, int position) {
@@ -84,5 +80,7 @@ public class Day31 {
                     ", position=" + position +
                     '}';
         }
+
+        enum Value {INSERT, DELETE, SUBSTITUTE}
     }
 }

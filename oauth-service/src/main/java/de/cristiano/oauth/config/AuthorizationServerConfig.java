@@ -26,8 +26,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints
-            .authenticationManager(authenticationManager)
-            .tokenStore(tokenStore)
+                .authenticationManager(authenticationManager)
+                .tokenStore(tokenStore)
         ;
     }
 
@@ -38,11 +38,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         clientConfig.getClients().forEach(client -> {
             final List<String> authorizedGrantTypes = client.getAuthorizedGrantTypes();
             builder.withClient(client.getClientId())
-                .authorizedGrantTypes(authorizedGrantTypes.toArray(new String[authorizedGrantTypes.size()]))
-                .scopes(client.getScope())
-                .accessTokenValiditySeconds(client.getAccessTokenValidity())
-                .refreshTokenValiditySeconds(client.getRefreshTokenValidity())
-                .secret(client.getClientSecret())
+                    .authorizedGrantTypes(authorizedGrantTypes.toArray(new String[authorizedGrantTypes.size()]))
+                    .scopes(client.getScope())
+                    .accessTokenValiditySeconds(client.getAccessTokenValidity())
+                    .refreshTokenValiditySeconds(client.getRefreshTokenValidity())
+                    .secret(client.getClientSecret())
             ;
         });
 

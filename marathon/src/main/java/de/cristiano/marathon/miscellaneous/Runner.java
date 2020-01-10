@@ -4,69 +4,69 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Runner {
-	private HashMap<Integer, Resource> resources = new HashMap<Integer, Resource>();
+    private HashMap<Integer, Resource> resources = new HashMap<Integer, Resource>();
 
-	public Iterable<Resource> getResources() {
-		return this.resources.values();
-	}
+    public static void main(String[] args) {
+        Runner d = new Runner();
 
-	public Resource acquireResource(int id) {
-		Resource w = this.resources.getOrDefault(id, null);
-		if (w == null) {
-			w = new Resource(id);
-			this.resources.put(id, w);
-		}
+        d.acquireResource(1).performTask("Task11");
+        d.acquireResource(2).performTask("Task21");
+        System.out.println(String.join(", ", d.acquireResource(2).getTasks()));
+        d.releaseResource(2);
+        d.acquireResource(1).performTask("Task12");
+        System.out.println(String.join(", ", d.acquireResource(1).getTasks()));
+        d.releaseResource(1);
+    }
 
-		return w;
-	}
+    public Iterable<Resource> getResources() {
+        return this.resources.values();
+    }
 
-	public void releaseResource(int id) {
-		Resource w = this.resources.getOrDefault(id, null);
-		if (w == null)
-			throw new IllegalArgumentException();
+    public Resource acquireResource(int id) {
+        Resource w = this.resources.getOrDefault(id, null);
+        if (w == null) {
+            w = new Resource(id);
+            this.resources.put(id, w);
+        }
 
-		w.dispose();
-		this.resources.remove(id);
-	}
+        return w;
+    }
 
-	public class Resource {
-		private ArrayList<String> tasks = new ArrayList<String>();
+    public void releaseResource(int id) {
+        Resource w = this.resources.getOrDefault(id, null);
+        if (w == null)
+            throw new IllegalArgumentException();
 
-		private int id;
+        w.dispose();
+        this.resources.remove(id);
+    }
 
-		public int getId() {
-			return this.id;
-		}
+    public class Resource {
+        private ArrayList<String> tasks = new ArrayList<String>();
 
-		public Iterable<String> getTasks() {
-			return this.tasks;
-		}
+        private int id;
 
-		public Resource(int id) {
-			this.id = id;
-		}
+        public Resource(int id) {
+            this.id = id;
+        }
 
-		public void performTask(String task) {
-			if (this.tasks == null)
-				throw new IllegalStateException(this.getClass().getName());
+        public int getId() {
+            return this.id;
+        }
 
-			this.tasks.add(task);
-		}
+        public Iterable<String> getTasks() {
+            return this.tasks;
+        }
 
-		public void dispose() {
-			this.tasks = null;
-		}
-	}
+        public void performTask(String task) {
+            if (this.tasks == null)
+                throw new IllegalStateException(this.getClass().getName());
 
-	public static void main(String[] args) {
-		Runner d = new Runner();
+            this.tasks.add(task);
+        }
 
-		d.acquireResource(1).performTask("Task11");
-		d.acquireResource(2).performTask("Task21");
-		System.out.println(String.join(", ", d.acquireResource(2).getTasks()));
-		d.releaseResource(2);
-		d.acquireResource(1).performTask("Task12");
-		System.out.println(String.join(", ", d.acquireResource(1).getTasks()));
-		d.releaseResource(1);
-	}
+        public void dispose() {
+            this.tasks = null;
+        }
+    }
 }

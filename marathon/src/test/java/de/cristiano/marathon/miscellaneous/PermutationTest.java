@@ -11,6 +11,15 @@ class PermutationTest {
 
     private final Permutation permutation = new Permutation();
 
+    @Test
+    void letterCombinations_shouldSucceed() {
+        //When
+        final List<String> permutation = this.permutation.letterCombinations("23");
+
+        //Then
+        assertThat(permutation, contains("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
+    }
+
     class Solution {
         public int maxArea(int[] height) {
             int maxArea = Integer.MIN_VALUE;
@@ -33,14 +42,5 @@ class PermutationTest {
             }
             return maxArea;
         }
-    }
-
-    @Test
-    void letterCombinations_shouldSucceed() {
-        //When
-        final List<String> permutation = this.permutation.letterCombinations("23");
-
-        //Then
-        assertThat(permutation, contains("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
     }
 }

@@ -1,4 +1,5 @@
 package de.cristiano.flight.util;
+
 import lombok.experimental.UtilityClass;
 
 import javax.annotation.Nonnull;
@@ -22,8 +23,8 @@ public class SystemOutUtil {
 
     public String formatAsNewLines(@Nonnull final Stream<Integer> stream) {
         return stream
-            .map(value -> value + lineSeparator())
-            .reduce("", String::concat);
+                .map(value -> value + lineSeparator())
+                .reduce("", String::concat);
     }
 
     public void restoreSystemOutput() {

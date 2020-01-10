@@ -7,15 +7,15 @@ import br.com.cristiano.wakanda.view.BasicView;
 
 public class StartGameController extends BaseController<BasicView> {
 
-	public StartGameController() {
-		super(new BasicView());
-	}
+    public StartGameController() {
+        super(new BasicView());
+    }
 
-	public void startGame() {
-		view.clear();
-		Commands.SAVE.getExecuter().execute(WakandaProject.getGameInPlay(), view);
-		view.printText(new ASCIIArt().createArt("game.name"));
-		view.printMessage("game.welcome", WakandaProject.getGameInPlay());
-		view.printMessage("game.goal");
-	}
+    public void startGame() {
+        view.clear();
+        Commands.SAVE.getExecuter().execute(WakandaProject.getGameInPlay(), view);
+        view.printText(new ASCIIArt().createArt("game.name"));
+        view.printMessage("game.welcome", WakandaProject.getGameInPlay());
+        view.printMessage("game.goal");
+    }
 }

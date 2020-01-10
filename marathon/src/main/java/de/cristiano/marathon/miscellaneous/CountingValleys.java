@@ -1,4 +1,5 @@
 package de.cristiano.marathon.miscellaneous;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

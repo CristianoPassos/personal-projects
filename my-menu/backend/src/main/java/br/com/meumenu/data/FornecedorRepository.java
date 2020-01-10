@@ -16,7 +16,7 @@
  */
 package br.com.meumenu.data;
 
-import java.util.List;
+import br.com.meumenu.model.cadastro.Fornecedor;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -24,26 +24,25 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
-import br.com.meumenu.model.cadastro.Fornecedor;
+import java.util.List;
 
 @ApplicationScoped
 public class FornecedorRepository {
 
-	@Inject
-	private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-	public List<Fornecedor> findAll() {
-		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Fornecedor> criteria = cb.createQuery(Fornecedor.class);
-		Root<Fornecedor> root = criteria.from(Fornecedor.class);
+    public List<Fornecedor> findAll() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Fornecedor> criteria = cb.createQuery(Fornecedor.class);
+        Root<Fornecedor> root = criteria.from(Fornecedor.class);
 
-		criteria.select(root);
+        criteria.select(root);
 
-		return em.createQuery(criteria).getResultList();
-	}
+        return em.createQuery(criteria).getResultList();
+    }
 
-	public Fornecedor findById(Long id) {
-		return em.find(Fornecedor.class, id);
-	}
+    public Fornecedor findById(Long id) {
+        return em.find(Fornecedor.class, id);
+    }
 }
