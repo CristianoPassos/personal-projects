@@ -18,8 +18,6 @@ class Array2dTest {
                 {0, 0, 1, 2, 4, 0}
         };
 
-        System.out.println(arr[2][1]);
-
         final int maxHourglass = Array2d.hourglassSum(arr);
 
         assertEquals(28, maxHourglass);

@@ -10,7 +10,7 @@ import static java.util.stream.Collectors.toSet;
  * <p>
  * For example, given the query string de and the set of strings [dog, deer, deal], return [deer, deal].
  */
-public class Day70 {
+public class Day106 {
 
     private final Trie trie = new Trie(null);
 

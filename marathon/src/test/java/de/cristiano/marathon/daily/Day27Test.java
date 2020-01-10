@@ -1,5 +1,6 @@
 package de.cristiano.marathon.daily;
 
+import de.cristiano.marathon.daily.utils.TreeNode;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -13,10 +14,10 @@ class Day27Test {
     @Test
     void reconstructTree_shouldSucceed() {
         //When
-        final Day27.Tree tree = day27.reconstructTree("abdklecfg", "kdlbeafcg");
+        final TreeNode node = day27.reconstructTree("abdklecfg", "kdlbeafcg");
 
         //Then
-        assertThat(tree.left.left.left.value, is('k'));
-        assertThat(tree.right.right.value, is('g'));
+        assertThat(node.left.left.left.value, is('k'));
+        assertThat(node.right.right.value, is('g'));
     }
 }

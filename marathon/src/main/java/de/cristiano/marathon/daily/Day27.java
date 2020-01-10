@@ -1,12 +1,14 @@
 package de.cristiano.marathon.daily;
 
+import de.cristiano.marathon.daily.utils.TreeNode;
+
 /**
  * Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree.
  */
 public class Day27 {
 
-    Tree reconstructTree(String preOrder, String inOrder) {
-        Tree root = new Tree(preOrder.charAt(0));
+    TreeNode reconstructTree(String preOrder, String inOrder) {
+        TreeNode root = new TreeNode(preOrder.charAt(0), null, null);
         final int currentNodePosition = inOrder.indexOf(root.value);
 
         root.left = buildTree(preOrder.substring(1), inOrder.substring(0, currentNodePosition));
@@ -15,8 +17,8 @@ public class Day27 {
         return root;
     }
 
-    private Tree buildTree(String preOrder, String inOrder) {
-        Tree node = new Tree(preOrder.charAt(0));
+    private TreeNode buildTree(String preOrder, String inOrder) {
+        TreeNode node = new TreeNode(preOrder.charAt(0), null, null);
         final int currentNodePosition = inOrder.indexOf(node.value);
 
         if (inOrder.length() == 1) {
@@ -29,16 +31,4 @@ public class Day27 {
         return node;
     }
 
-
-    static class Tree {
-        Tree left;
-
-        Tree right;
-
-        Character value;
-
-        public Tree(Character value) {
-            this.value = value;
-        }
-    }
 }
