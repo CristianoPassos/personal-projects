@@ -12,8 +12,6 @@ import static java.lang.String.format;
 public class Array2d {
 
     private static int hourglass(int[][] arr, int x, int y) {
-        System.out.println(format("Looking into position: %s %s", x, y));
-
         return arr[y][x] + arr[y][x + 1] + arr[y][x + 2]
                 + arr[1 + y][1 + x]
                 + arr[y + 2][x] + arr[y + 2][x + 1] + arr[y + 2][x + 2];

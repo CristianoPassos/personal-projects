@@ -29,8 +29,6 @@ public class Day29 {
 
         final int randomValue = calculateRandomValue((int) max, (int) length, times);
 
-        System.out.println("Random value is: " + randomValue);
-
         return randomValue;
     }
 
