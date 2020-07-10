@@ -6,8 +6,8 @@ Personal repo to try out new tech and to develop my coding skills, bellow is a b
 | Project | Description | Technology
 
 | link:marathon[Marathon]
-| As most as I can, I will solve and publish one challenge from https://www.dailycodingproblem.com[Daily Coding Problem]
-| Java 8
+| As most as I can, I will solve and publish one challenges from https://www.dailycodingproblem.com[Daily Coding Problem] and other sources
+| Java 8; Kotlin :rocket:
 
 | link:eso-wallpapers[ESO Wallpapers]
 | Project to download all ESO - European Southern Observatory https://www.eso.org/public/images/archive/wallpapers/[Wallpapers]
