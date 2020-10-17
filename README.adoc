@@ -5,6 +5,10 @@ Personal repo to try out new Projects
 |===
 | Project | Description | Technology
 
+| link:ecommerce[eCommerce]
+| Microservices based eCommerce platform (checkout, freight, payment, stock, voucher)
+| Java 15, Kotlin, Microservices, K8s, https://insujang.github.io/2019-10-10/open-container-initiative-image-spec/[OCI Image] 
+
 | link:marathon[Marathon]
 | Coding challenges from https://www.dailycodingproblem.com[Daily Coding Problem] and other sources
 | Java 8; Kotlin :rocket:
@@ -22,8 +26,8 @@ Personal repo to try out new Projects
 | Redis, Spring Security, Spring Boot, OAuth2, H2, Flyway, Bcrypt
 
 | link:wakanda[Wakanda]
-| Command line based role playing game
+| Command-line based role-playing game
 | Java 8
 |===
 
-For work oppotunities please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn]
+For work opportunities please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn]

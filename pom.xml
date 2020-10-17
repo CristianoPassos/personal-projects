@@ -15,6 +15,11 @@
         <module>my-menu/backend</module>
         <module>oauth-service</module>
         <module>wakanda</module>
+        <module>ecommerce/checkout</module>
+        <module>ecommerce/freight</module>
+        <module>ecommerce/payment</module>
+        <module>ecommerce/stock</module>
+        <module>ecommerce/voucher</module>
     </modules>
 
 </project>
