@@ -2,8 +2,7 @@ package de.cristiano.marathon.dcp;
 
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class Day102Test {
 
@@ -21,7 +20,7 @@ class Day102Test {
         final int testArray2_result = day102.maxContiguousSum(testArray2);
 
         //Then
-        assertThat(testArray1_result, is(137));
-        assertThat(testArray2_result, is(0));
+        assertThat(testArray1_result).isEqualTo(137);
+        assertThat(testArray2_result).isEqualTo(0);
     }
 }

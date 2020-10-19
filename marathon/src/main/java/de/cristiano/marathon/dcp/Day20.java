@@ -1,7 +1,6 @@
 package de.cristiano.marathon.dcp;
 
-import com.google.common.primitives.Ints;
-
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +22,11 @@ public class Day20 {
             return 1;
         }
 
-        if (steps < Ints.min(stepLengths)) {
+        int min = Arrays.stream(stepLengths)
+                .min()
+                .orElse(Integer.MAX_VALUE);
+
+        if (steps < min) {
             return 0;
         }
 

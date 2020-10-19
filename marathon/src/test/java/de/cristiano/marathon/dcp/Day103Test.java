@@ -2,8 +2,7 @@ package de.cristiano.marathon.dcp;
 
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.collection.ArrayMatching.arrayContainingInAnyOrder;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class Day103Test {
 
@@ -18,7 +17,7 @@ class Day103Test {
         final Integer[] subSet = day103.addsUpSubSet(set, 24);
 
         //Then
-        assertThat(subSet, arrayContainingInAnyOrder(12, 9, 2, 1));
+        assertThat(subSet).containsExactlyInAnyOrder(12, 9, 2, 1);
 
     }
 }

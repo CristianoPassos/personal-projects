@@ -2,8 +2,7 @@ package de.cristiano.marathon.dcp;
 
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class Day25Test {
 
@@ -18,6 +17,6 @@ class Day25Test {
         final int largestSum = day25.largesAdjacentSum(numbers);
 
         //Then
-        assertThat(largestSum, is(19));
+        assertThat(largestSum).isEqualTo(19);
     }
 }

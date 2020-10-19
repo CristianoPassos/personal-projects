@@ -12,7 +12,7 @@ class Day14Test {
     @Test
     void shouldHaveBoughtAt() {
         // Given
-        int[] stockPrices = { 9, 11, 8, 5, 7, 10 };
+        int[] stockPrices = {9, 11, 8, 5, 7, 10};
 
         // When
         final int bestPrice = day14.shouldHaveBoughtAt(stockPrices);

@@ -2,8 +2,8 @@ package de.cristiano.marathon.dcp;
 
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 class Day100Test {
 
@@ -15,6 +15,6 @@ class Day100Test {
         final String longestPalindromic = day100.longestPalindromic("aaaaaabbbbbzzcccddcbb");
 
         //Then
-        assertThat(longestPalindromic, is("aaaccbbbbbbbccaaa"));
+        assertThat(longestPalindromic).isEqualTo("aaaccbbbbbbbccaaa");
     }
 }

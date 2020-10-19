@@ -17,7 +17,7 @@ class Day13Test {
     @Test
     void powerSet_shouldSucceed() {
         //Given
-        Set<Set<Integer>> powerSet = day13.powerSet(new HashSet<>(Arrays.asList(1,2,3)));
+        Set<Set<Integer>> powerSet = day13.powerSet(new HashSet<>(Arrays.asList(1, 2, 3)));
 
         //Then
         Set<Set<Integer>> expected = new HashSet<>();
