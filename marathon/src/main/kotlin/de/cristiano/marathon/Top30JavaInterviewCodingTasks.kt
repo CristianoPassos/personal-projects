@@ -21,5 +21,20 @@ class Top30JavaInterviewCodingTasks {
         }
     }
 
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val complements = mutableMapOf<Int, Int>()
+
+        nums.forEachIndexed { index, value ->
+            val complement = target - index
+            val complementIndex = complements[complement]
+
+            if (complementIndex != null) return intArrayOf(complementIndex, index)
+            else complements[value] = index
+
+        }
+
+        error("Invalid array")
+    }
+
 
 }

@@ -16,4 +16,9 @@ internal class Top30JavaInterviewCodingTasksTest {
         assertThat(permutations).hasSize(6)
     }
 
+
+    @Test
+    fun twoSum() {
+        top30JavaInterviewCodingTasks.twoSum(intArrayOf(2, 7, 11), 9)
+    }
 }
