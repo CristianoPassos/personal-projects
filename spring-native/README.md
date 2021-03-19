@@ -1,9 +1,3 @@
-# Read Me First
-The following was discovered as part of building this project:
-
-* The JVM level was changed from '16' to '11', review the [JDK Version Range](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range) on the wiki for more details.
-* The original package name 'de.cristiano.spring-native' is invalid and this project uses 'de.cristiano.native' instead.
-
 # Getting Started
 
 ### Reference Documentation
