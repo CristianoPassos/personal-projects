@@ -9,6 +9,10 @@ Personal repo to try out new Projects
 | Hello World REST application to try out GraalVM with milliseconds startup time and low memory footprint! 
 | JDK 11; Kotlin; Spring Native; GraalVM; Gradle; Docker; Hello World 
 
+| link:flight[Mars rover]
+| Small Mars rover app 
+| JDK 8; Command line 
+
 | link:marathon[Marathon]
 | Coding challenges from https://www.dailycodingproblem.com[Daily Coding Problem] and other sources
 | Java 8; Kotlin :rocket:
