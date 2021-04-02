@@ -21,7 +21,7 @@ public class WallpaperNextPageExtractorTest {
     @Test
     public void testLastPageExtraction() {
         Assertions.assertTimeout(Duration.ofSeconds(5), () -> {
-            Optional<String> possibleNextPage = Optional.of("https://www.eso.org/public/images/archive/wallpapers/list/239/");
+            Optional<String> possibleNextPage = Optional.of("https://www.eso.org/public/images/archive/wallpapers/list/285/");
 
             while (possibleNextPage.isPresent()) {
                 possibleNextPage = extractor.extract(possibleNextPage.get());
