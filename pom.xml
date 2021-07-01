@@ -8,6 +8,13 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
+	<properties>
+        <!-- Sonar -->
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>cristianopassos</sonar.organization>
+        <sonar.projectKey>CristianoPassos_personal-projects</sonar.projectKey>
+	</properties>
+
     <modules>
         <module>marathon</module>
         <module>flight</module>
@@ -15,6 +22,6 @@
         <module>my-menu/backend</module>
         <module>oauth-service</module>
         <module>wakanda</module>
+        <module>quote-aggregator-service</module>
     </modules>
-
 </project>
