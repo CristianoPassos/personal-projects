@@ -1,21 +1,22 @@
-# Personal Projects - Cristiano Passos image:https://travis-ci.com/CristianoPassos/personal-projects.svg?branch=master["Build Status", link="https://travis-ci.com/CristianoPassos/personal-projects"]
+= Personal Projects - Cristiano Passos image:https://github.com/CristianoPassos/personal-projects/workflows/Build/badge.svg[link="https://github.com/CristianoPassos/personal-projects/workflows/Build/badge.svg"]
 
-Personal repo to try out new Projects
+
+Personal repository to try out ideas
 
 |===
 | Project | Description | Technology
 
 | link:quote-aggregator-service[Quote Aggregator]
-| WebSocket client which aggregates quotes and provides an API for Candlestick visualization! 
-| JDK 11; Kotlin; WebSocket;  
+| WebSocket client which aggregates quotes and provides an API for Candlestick visualization
+| Kotlin; WebSocket
 
 | link:spring-native[Spring Native]
-| Hello World REST application to try out GraalVM with milliseconds startup time and low memory footprint! 
-| JDK 11; Kotlin; Spring Native; GraalVM; Gradle; Docker; Hello World 
+| Hello World REST application to try out GraalVM with milliseconds startup time and low memory footprint
+| JDK 11; Kotlin; Spring Native; GraalVM; Gradle; Docker; Hello World
 
 | link:flight[Mars rover]
-| Small Mars rover app 
-| JDK 8; Command line 
+| Small Mars rover app
+| JDK 8; Command line
 
 | link:marathon[Marathon]
 | Coding challenges from https://www.dailycodingproblem.com[Daily Coding Problem] and other sources
@@ -26,7 +27,8 @@ Personal repo to try out new Projects
 | Java 10 :coffee: (Var, Parallel Stream, Flat Maps); JSoup; JUnit 5; Log4j 2
 
 | link:my-menu[My Menu]
-| This project is an unfinished Order Management System for restaurants. It's composed of three parts, Backend (Java), Web (Angular) and Mobile (Ionic)
+| This project is an unfinished Order Management System for restaurants.
+It's composed of three parts, Backend (Java), Web (Angular) and Mobile (Ionic)
 | Java, Angular and Ionic
 
 | link:oauth-service[OAuth2 Service]
