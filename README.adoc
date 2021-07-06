@@ -1,7 +1,4 @@
-= Personal Projects - Cristiano Passos image:https://github.com/CristianoPassos/personal-projects/workflows/Build/badge.svg[link="https://github.com/CristianoPassos/personal-projects/workflows/Build/badge.svg"]
-
-
-Personal repository to try out ideas
+= Personal Projects - Cristiano Passos image:https://github.com/CristianoPassos/personal-projects/workflows/Build/badge.svg[link="https://github.com/CristianoPassos/personal-projects/actions/workflows/build.yml?query=branch%3Amaster"] image:https://sonarcloud.io/api/project_badges/measure?project=CristianoPassos_personal-projects&metric=alert_status[link="https://sonarcloud.io/dashboard?id=CristianoPassos_personal-projects"]
 
 |===
 | Project | Description | Technology
@@ -39,5 +36,3 @@ It's composed of three parts, Backend (Java), Web (Angular) and Mobile (Ionic)
 | Command-line based role-playing game
 | Java 8
 |===
-
-For work opportunities please take a look at my http://bit.ly/cvcp6[Curriculum] or https://www.linkedin.com/in/cristiano-passos/[LinkedIn]
