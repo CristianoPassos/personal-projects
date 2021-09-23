@@ -3,6 +3,7 @@ package br.cristiano.eso.extractor;
 import java.time.Duration;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static br.cristiano.eso.Constants.ESO_WALLPAPERS_PAGE;
@@ -13,12 +14,14 @@ public class WallpaperNextPageExtractorTest {
     private static final WallpaperNextPageExtractor extractor = new WallpaperNextPageExtractor();
 
     @Test
+    @Disabled
     public void testExtraction() {
         Optional<String> extract = extractor.extract(ESO_WALLPAPERS_PAGE);
         assertEquals("https://www.eso.org/public/images/archive/wallpapers/list/2/", extract.get());
     }
 
     @Test
+    @Disabled
     public void testLastPageExtraction() {
         Assertions.assertTimeout(Duration.ofSeconds(5), () -> {
             Optional<String> possibleNextPage = Optional.of("https://www.eso.org/public/images/archive/wallpapers/list/285/");
