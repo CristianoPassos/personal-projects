@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static br.cristiano.eso.Constants.DEFAULT_DIRECTORY;
@@ -25,6 +26,7 @@ class ESOIntegrationTest {
     }
 
     @Test
+    @Disabled
     void testESO() {
         ESO.main(ARGS);
         File wallpapers = new File(TEMP_DIR + DEFAULT_DIRECTORY + File.separator);
