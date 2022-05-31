@@ -23,7 +23,7 @@ class FileUtilsTest {
         // Then
         assertThat(users).hasSize(5)
 
-        val userOne = users.first { it.id == 1L }
+        val userOne = users.first { it.userId == 1L }
         assertThat(userOne.name).isEqualTo("andre")
         assertThat(userOne.email).isEqualTo("andre@bar.de")
     }
