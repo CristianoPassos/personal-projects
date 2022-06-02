@@ -21,21 +21,22 @@ class PurchaseService {
         if (rightTableField.returnType != leftTableField.returnType)
             throw IllegalArgumentException("Columns $adColumn - $userColumn are not of the same type")
 
-        val leftEntitiesByColumn = adRepository.findAll().groupBy { rightTableField.get(it).toString() }
-        val rightEntitiesByColumn = userRepository.findAll().groupBy { leftTableField.get(it).toString() }
+        val rightEntitiesByColumn = adRepository.findAll().groupBy { rightTableField.get(it).toString() }
 
-        return leftEntitiesByColumn.mapNotNull { rightTable ->
-            val leftTable = rightEntitiesByColumn[rightTable.key]
+        val lefEntitiesByColumn = userRepository.findAll().groupBy { leftTableField.get(it).toString() }
+
+        return rightEntitiesByColumn.mapNotNull { rightTable ->
+            val leftTable = lefEntitiesByColumn[rightTable.key]
 
             if (leftTable != null) {
                 return rightTable.value.map { rightEntity ->
                     leftTable.map { leftEntity ->
                         Purchase(
                             name = leftEntity.name,
-                            adId = rightEntity.id,
+                            adId = rightEntity.adId,
                             email = leftEntity.email,
                             title = rightEntity.title,
-                            userId = leftEntity.id,
+                            userId = leftEntity.userId,
                         )
                     }
                 }.flatten()
@@ -44,6 +45,7 @@ class PurchaseService {
         }.flatten()
     }
 }
+
 
 data class Purchase(
     val adId: Long,

@@ -17,10 +17,10 @@ class AdRepository : Repository<Long, Ad>(Ad::class) {
 
     fun saveAll(entities: List<Ad>): Collection<Ad> {
         entities.forEach {
-            DATA[it.id] = it
+            DATA[it.adId] = it
         }
 
-        val ids = entities.map { it.id }
+        val ids = entities.map { it.adId }
 
         return DATA
             .filterKeys { ids.contains(it) }

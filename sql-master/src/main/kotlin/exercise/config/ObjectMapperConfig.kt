@@ -8,9 +8,10 @@ import com.fasterxml.jackson.module.kotlin.KotlinModule
 class ObjectMapperConfig {
 
     companion object {
-        val CSV_MAPPER: ObjectMapper = CsvMapper()
-            .apply { registerModule(KotlinModule.Builder().build()) }
-            .setPropertyNamingStrategy(UPPER_SNAKE_CASE)
+        val CSV_MAPPER: ObjectMapper = CsvMapper.builder()
+            .addModule(KotlinModule.Builder().build())
+            .propertyNamingStrategy(UPPER_SNAKE_CASE)
+            .build()
     }
 
 }

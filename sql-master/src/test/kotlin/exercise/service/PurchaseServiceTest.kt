@@ -12,6 +12,7 @@ import org.junit.jupiter.api.assertThrows
 class PurchaseServiceTest {
 
     private val service = PurchaseService()
+    private val joinService = JoinService()
 
     private val adRepository = AdRepository()
     private val userRepository = UserRepository()
@@ -60,5 +61,11 @@ class PurchaseServiceTest {
 
         // Then
         assertThat(exception.message).isEqualTo("Columns title - userId are not of the same type")
+    }
+
+    @Test
+    fun `Inner Join Test`() {
+        // When
+        joinService.innerJoin(Ad::class, "title", User::class, "name", PurchaseExample::class)
     }
 }

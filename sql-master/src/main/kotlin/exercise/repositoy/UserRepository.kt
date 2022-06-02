@@ -17,10 +17,10 @@ class UserRepository : Repository<Long, User>(User::class) {
 
     fun saveAll(entities: List<User>): Collection<User> {
         entities.forEach {
-            DATA[it.id] = it
+            DATA[it.userId] = it
         }
 
-        val ids = entities.map { it.id }
+        val ids = entities.map { it.userId }
 
         return DATA
             .filterKeys { ids.contains(it) }
