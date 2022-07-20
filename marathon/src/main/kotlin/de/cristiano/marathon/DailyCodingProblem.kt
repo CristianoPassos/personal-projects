@@ -50,4 +50,53 @@ class DailyCodingProblem {
 
         return result
     }
+
+    /**
+     * Given a list of words, find all pairs of unique indices such that the concatenation of the two words is a
+     * palindrome.
+     */
+    fun palindromePairs(words: Array<String>): List<Pair<Int, Int>> {
+        val result = mutableListOf<Pair<Int, Int>>()
+
+        words.forEachIndexed { index, word ->
+            words.forEachIndexed { index2, word2 ->
+                if (index != index2 && istPalindrome(word + word2)) result.add(index to index2)
+            }
+        }
+
+        return result
+    }
+
+    private fun istPalindrome(word: String): Boolean {
+        var leftIndex = 0
+        var rightIndex = word.lastIndex
+
+        while (leftIndex < rightIndex) {
+            if (word[rightIndex] != word[leftIndex]) return false
+
+            rightIndex--
+            leftIndex++
+        }
+
+        return true
+    }
+
+    /**
+     * Given a string and a number of lines, print the string in zigzag form.
+     */
+    fun printZigZagFrom(string: String, depth: Int): String {
+        val zigZag = Array(depth) { StringBuilder(" ".repeat(string.length)) }
+        var depthIndex = 0
+        var down = true
+
+        string.forEachIndexed { index, char ->
+            zigZag[depthIndex].insert(index, char)
+
+            if (depthIndex == zigZag.lastIndex) down = false
+            if (depthIndex == 0) down = true
+            if (down) depthIndex++ else depthIndex--
+        }
+
+        return zigZag.joinToString(separator = "\n")
+    }
 }
