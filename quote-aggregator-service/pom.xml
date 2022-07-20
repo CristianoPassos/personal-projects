@@ -22,7 +22,7 @@
 
         <!-- rest-assured -->
         <groovy.version>3.0.7</groovy.version>
-        <rest-assured.version>5.1.0</rest-assured.version>
+        <rest-assured.version>5.1.1</rest-assured.version>
 
         <!-- Jacoco -->
         <jacoco.args></jacoco.args>
