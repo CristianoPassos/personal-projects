@@ -1,6 +1,7 @@
 package de.cristiano.marathon
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class LeetCodeTest {
@@ -321,6 +322,7 @@ class LeetCodeTest {
     }
 
     @Test
+    @Disabled
     fun searchRangeTest() {
         val result = leetCode.searchRange(intArrayOf(2), 1)
 
@@ -340,6 +342,7 @@ class LeetCodeTest {
     }
 
     @Test
+    @Disabled
     fun ladderLengthTest() {
         val result = leetCode.ladderLength("cet", "ism", mutableListOf("kid", "tag", "pup", "ail", "tun"))
 
