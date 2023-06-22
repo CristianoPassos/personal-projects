@@ -3,6 +3,10 @@
 |===
 | Project | Description | Technology
 
+| link:https://github.com/CristianoPassos/personal-projects-go/tree/main/extract-load-transform[ETL]
+| Go ETL (Extract Load Transform) project, which loads data from API in parallel using Goroutines and uses BigQuery as a sink
+| Go; Goroutines; Cassandra; BigQuery
+
 | link:quote-aggregator-service[Quote Aggregator]
 | WebSocket client which aggregates quotes and provides an API for Candlestick visualization
 | Kotlin; WebSocket
